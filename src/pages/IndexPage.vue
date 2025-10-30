@@ -11,7 +11,29 @@
 
     <SectionNav />
 
-    <section id="about" class="section container">About…</section>
+    <section id="about" class="section container">
+      <div class="row q-col-gutter-xl items-start">
+        <div class="col-12 col-md-7">
+          <div class="text-h5 text-weight-bold q-mb-sm">Hello, I'm {{ cv.name.split(' ')[0] }}</div>
+          <p class="text-body1 q-mb-none"></p>
+        </div>
+        <div class="col-12 col-md-5">
+          <q-card flat bordered class="q-pa-md">
+            <div class="text-subtitle2 text-uppercase text-secondary q-mb-sm">
+              Hobbies & Interests
+            </div>
+            <div class="row q-col-gutter-md items-center">
+              <div v-for="h in hobbies" :key="h.label" class="col-auto column items-center q-pa-sm">
+                <q-avatar size="48px" class="bg-grey-2"
+                  ><q-icon :name="h.icon" size="28px"
+                /></q-avatar>
+                <div class="text-caption q-mt-xs">{{ h.label }}</div>
+              </div>
+            </div>
+          </q-card>
+        </div>
+      </div>
+    </section>
     <section id="skills" class="section alt container">Skills…</section>
     <section id="experience" class="section container">Experience…</section>
     <section id="education" class="section alt container">Education…</section>
@@ -27,6 +49,14 @@
 import { reactive } from 'vue';
 import SectionNav from 'src/components/SectionNav.vue';
 const cv = reactive({ name: 'Maria Kekola' });
+const hobbies = [
+  { icon: 'camera_alt', label: 'Photography' },
+  { icon: 'brush', label: 'Arts' },
+  { icon: 'sports_esports', label: 'Games' },
+  { icon: 'sports_gymnastics', label: 'Gym Climbing' },
+  { icon: 'downhill_skiing', label: 'Downhill Skiing' },
+  { icon: 'flight_takeoff', label: 'Travel' },
+];
 </script>
 
 <style scoped>
