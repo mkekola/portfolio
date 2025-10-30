@@ -9,6 +9,8 @@
       </q-img>
     </section>
 
+    <SectionNav />
+
     <section id="about" class="section container">About…</section>
     <section id="skills" class="section alt container">Skills…</section>
     <section id="experience" class="section container">Experience…</section>
@@ -23,6 +25,7 @@
 
 <script setup lang="ts">
 import { reactive } from 'vue';
+import SectionNav from 'src/components/SectionNav.vue';
 const cv = reactive({ name: 'Maria Kekola' });
 </script>
 
