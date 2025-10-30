@@ -85,17 +85,19 @@ export default defineConfig((/* ctx */) => {
 
     // https://v2.quasar.dev/quasar-cli-vite/quasar-config-file#framework
     framework: {
-    plugins: ['Notify'],
-    config: {
-      brand: {
-        primary:  '#1B3458',  // Midnight Blue
-        secondary:'#B9A98E',  // Driftwood Beige
-        accent:   '#F8C476',  // Alpine Gold
-        dark:     '#130D0D',
-        positive: '#7AC48A',
-        negative: '#C85A54',
-        info:     '#1E466E',
-        warning:  '#F2C166'
+      plugins: ['Notify'],
+      config: {
+        brand: {
+          primary: '#1B3458', // Midnight Blue
+          secondary: '#B9A98E', // Driftwood Beige
+          accent: '#F8C476', // Alpine Gold
+          dark: '#130D0D',
+          positive: '#7AC48A',
+          negative: '#C85A54',
+          info: '#1E466E',
+          warning: '#F2C166',
+        },
+      },
     },
 
     // animations: 'all', // --- includes all animations
