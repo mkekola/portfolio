@@ -47,7 +47,22 @@
         </q-list>
       </div>
     </section>
-    <section id="experience" class="section container">Experience…</section>
+    <section id="experience" class="section container">
+      <div class="text-h6 text-uppercase text-weight-bold q-mb-md">Experience</div>
+      <q-timeline color="primary" layout="comfortable" side="right" dense>
+        <q-timeline-entry
+          v-for="job in experience"
+          :key="job.company"
+          :title="job.role + ' — ' + job.company"
+          :subtitle="job.period"
+        >
+          <ul class="q-mt-sm q-mb-none">
+            <li v-for="b in job.bullets" :key="b">{{ b }}</li>
+          </ul>
+          <div class="q-mt-sm"></div>
+        </q-timeline-entry>
+      </q-timeline>
+    </section>
     <section id="skills" class="section alt container">Skills…</section>
     <section id="contact" class="section container">Contact…</section>
 
@@ -75,10 +90,31 @@ const education = [
     school: 'University of Helsinki',
     period: '2021–2026(ongoing)',
   },
+];
+const experience = [
   {
-    degree: 'Matriculation Examination',
-    school: 'Seinäjoki Upper Secondary School',
-    period: '2011–2014',
+    role: 'Network Trainee',
+    company: 'Finavia Oyj',
+    period: '2023–Now',
+    bullets: [
+      'Configurations',
+      'Network monitoring',
+      'Troubleshooting',
+      'Documentation',
+      'Customer support',
+    ],
+  },
+  {
+    role: 'Service Manager',
+    company: 'CSF Security Oy',
+    period: '2019–2022',
+    bullets: ['Team lead', 'Customer support', 'Scheduling', 'Reporting'],
+  },
+  {
+    role: 'Cash-in-Transit Guard',
+    company: 'CSF Security Oy',
+    period: '2017–2019',
+    bullets: ['Secure transportation of valuables', 'Customer service'],
   },
 ];
 </script>
