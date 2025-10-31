@@ -4,9 +4,9 @@
       <q-space />
       <nav class="nav-center">
         <q-btn flat dense no-caps @click="to('#about')" label="About" />
-        <q-btn flat dense no-caps @click="to('#skills')" label="Skills" />
-        <q-btn flat dense no-caps @click="to('#experience')" label="Experience" />
         <q-btn flat dense no-caps @click="to('#education')" label="Education" />
+        <q-btn flat dense no-caps @click="to('#experience')" label="Experience" />
+        <q-btn flat dense no-caps @click="to('#skills')" label="Skills" />
         <q-btn flat dense no-caps @click="to('#contact')" label="Contact" />
       </nav>
       <q-space />

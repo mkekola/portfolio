@@ -34,9 +34,21 @@
         </div>
       </div>
     </section>
-    <section id="skills" class="section alt container">Skills…</section>
+    <section id="education" class="section alt">
+      <div class="container">
+        <div class="text-h6 text-uppercase text-weight-bold q-mb-md">Education</div>
+        <q-list bordered class="rounded-borders">
+          <q-item v-for="ed in education" :key="ed.school">
+            <q-item-section>
+              <div class="text-subtitle2">{{ ed.degree }} — {{ ed.school }}</div>
+              <div class="text-caption text-secondary">{{ ed.period }}</div>
+            </q-item-section>
+          </q-item>
+        </q-list>
+      </div>
+    </section>
     <section id="experience" class="section container">Experience…</section>
-    <section id="education" class="section alt container">Education…</section>
+    <section id="skills" class="section alt container">Skills…</section>
     <section id="contact" class="section container">Contact…</section>
 
     <footer class="q-pa-lg text-center text-caption text-secondary">
@@ -56,6 +68,18 @@ const hobbies = [
   { icon: 'sports_gymnastics', label: 'Gym Climbing' },
   { icon: 'downhill_skiing', label: 'Downhill Skiing' },
   { icon: 'flight_takeoff', label: 'Travel' },
+];
+const education = [
+  {
+    degree: 'B.Sc. Computer Science',
+    school: 'University of Helsinki',
+    period: '2021–2026(ongoing)',
+  },
+  {
+    degree: 'Matriculation Examination',
+    school: 'Seinäjoki Upper Secondary School',
+    period: '2011–2014',
+  },
 ];
 </script>
 
