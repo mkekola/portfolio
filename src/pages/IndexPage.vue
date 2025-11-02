@@ -249,11 +249,12 @@ const contacts = [
 .bg-overlay {
   background: linear-gradient(
     180deg,
-    rgba(19, 13, 13, 0.36) 0%,
-    rgba(27, 52, 88, 0.36) 60%,
-    rgba(27, 52, 88, 0.55) 100%
+    rgba(95, 93, 93, 0.36) 0%,
+    rgba(95, 93, 93, 0.36) 60%,
+    rgba(95, 93, 93, 0.36) 100%
   );
 }
+
 .container {
   max-width: 1100px;
   margin: 0 auto;
