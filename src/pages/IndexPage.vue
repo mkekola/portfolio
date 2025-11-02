@@ -56,10 +56,25 @@
           :title="job.role + ' — ' + job.company"
           :subtitle="job.period"
         >
-          <ul class="q-mt-sm q-mb-none">
-            <li v-for="b in job.bullets" :key="b">{{ b }}</li>
+          <ul class="list-plain q-mt-sm q-mb-none" role="list">
+            <li v-for="(b, j) in job.bullets" :key="j" role="listitem">{{ b }}</li>
           </ul>
           <div class="q-mt-sm"></div>
+        </q-timeline-entry>
+      </q-timeline>
+      <q-timeline color="info" layout="comfortable" side="right" dense>
+        <div class="text-h6 text-uppercase text-weight-bold q-mb-md" id="volunteer">
+          Volunteer Work
+        </div>
+        <q-timeline-entry
+          v-for="(v, i) in volunteer"
+          :key="i"
+          :title="v.role + ' — ' + v.org"
+          :subtitle="v.period"
+        >
+          <ul class="list-plain q-mt-xs q-mb-none" role="list">
+            <li v-for="(b, j) in v.bullets" :key="j" role="listitem">{{ b }}</li>
+          </ul>
         </q-timeline-entry>
       </q-timeline>
     </section>
@@ -204,6 +219,28 @@ const experience = [
     bullets: ['Secure transportation of valuables', 'Customer service'],
   },
 ];
+const volunteer = [
+  {
+    role: 'Treasurer',
+    org: 'Ylioppilaskamera ry',
+    period: '2023–ongoing',
+    bullets: ['Budget planning, financial reporting, membership management.'],
+  },
+  {
+    role: 'Board Member',
+    org: 'Ylioppilaskamera ry',
+    period: '2023-ongoing',
+    bullets: ['Event planning, organizing workshops'],
+  },
+  {
+    role: 'Publicist, Social Media Manager',
+    org: 'TKO-äly ry',
+    period: '2022–2023',
+    bullets: [
+      'Content creation, social media management, event promotion, graphic design, newsletter production.',
+    ],
+  },
+];
 const skills = {
   left: [
     { icon: 'fa-brands fa-python', label: 'Python', note: 'Flask' },
@@ -272,5 +309,10 @@ const contacts = [
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 16px;
+}
+.list-plain {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 </style>
