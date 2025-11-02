@@ -11,7 +11,7 @@
 
     <SectionNav />
 
-    <section id="about" class="section container">
+    <PaperSection id="about" title="About">
       <div class="row q-col-gutter-xl items-start">
         <div class="col-12 col-md-7">
           <div class="text-h5 text-weight-bold q-mb-sm">Hello, I'm {{ cv.name.split(' ')[0] }}</div>
@@ -31,10 +31,9 @@
           </q-card>
         </div>
       </div>
-    </section>
-    <section id="education" class="section alt">
+    </PaperSection>
+    <PaperSection id="education" title="Education">
       <div class="container">
-        <div class="text-h6 text-uppercase text-weight-bold q-mb-md">Education</div>
         <q-list bordered class="rounded-borders">
           <q-item v-for="ed in education" :key="ed.school">
             <q-item-section>
@@ -44,9 +43,8 @@
           </q-item>
         </q-list>
       </div>
-    </section>
-    <section id="experience" class="section container">
-      <div class="text-h6 text-uppercase text-weight-bold q-mb-md">Experience</div>
+    </PaperSection>
+    <PaperSection id="experience" title="Experience">
       <q-timeline color="primary" layout="comfortable" side="right" dense>
         <q-timeline-entry
           v-for="job in experience"
@@ -60,10 +58,9 @@
           <div class="q-mt-sm"></div>
         </q-timeline-entry>
       </q-timeline>
+    </PaperSection>
+    <PaperSection id="volunteer" title="Volunteer Work">
       <q-timeline color="info" layout="comfortable" side="right" dense>
-        <div class="text-h6 text-uppercase text-weight-bold q-mb-md" id="volunteer">
-          Volunteer Work
-        </div>
         <q-timeline-entry
           v-for="(v, i) in volunteer"
           :key="i"
@@ -75,11 +72,9 @@
           </ul>
         </q-timeline-entry>
       </q-timeline>
-    </section>
-    <section id="skills" class="section alt">
+    </PaperSection>
+    <PaperSection id="skills" title="Skills">
       <div class="container">
-        <div class="text-h6 text-uppercase text-weight-bold q-mb-md">Skills</div>
-
         <div class="row q-col-gutter-xl">
           <!-- Lista 1 -->
           <div class="col-12 col-md-6">
@@ -112,11 +107,9 @@
           </div>
         </div>
       </div>
-    </section>
-    <section id="contact" class="section container">
-      <div class="text-h6 text-uppercase text-weight-bold q-mb-md">Contact</div>
+    </PaperSection>
+    <PaperSection id="contact" title="Contact">
       <q-card flat bordered class="q-pa-md">
-        <div class="text-subtitle2 text-uppercase text-secondary q-mb-sm">Quick Links</div>
         <q-list dense>
           <q-item
             v-for="c in contacts"
@@ -132,7 +125,7 @@
           </q-item>
         </q-list>
       </q-card>
-    </section>
+    </PaperSection>
 
     <footer class="q-pa-lg text-center text-caption text-secondary">
       © {{ new Date().getFullYear() }} {{ cv.name }}
@@ -143,6 +136,7 @@
 <script setup lang="ts">
 import { reactive } from 'vue';
 import SectionNav from 'src/components/SectionNav.vue';
+import PaperSection from 'src/components/PaperSection.vue';
 const cv = reactive({ name: 'Maria Kekola' });
 const hobbies = [
   { icon: 'fa-solid fa-camera', label: 'Photography' },
@@ -260,12 +254,6 @@ const contacts = [
     rgba(27, 52, 88, 0.55) 100%
   );
 }
-.section {
-  padding: 64px 0;
-}
-.section.alt {
-  background: #f2e3c0;
-}
 .container {
   max-width: 1100px;
   margin: 0 auto;
@@ -275,5 +263,11 @@ const contacts = [
   list-style: none;
   padding: 0;
   margin: 0;
+}
+.text-caption {
+  font-size: 0.9rem;
+}
+.text-subtitle2 {
+  font-size: 1.1rem;
 }
 </style>
