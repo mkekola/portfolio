@@ -63,7 +63,43 @@
         </q-timeline-entry>
       </q-timeline>
     </section>
-    <section id="skills" class="section alt container">Skills…</section>
+    <section id="skills" class="section alt">
+      <div class="container">
+        <div class="text-h6 text-uppercase text-weight-bold q-mb-md">Skills</div>
+
+        <div class="row q-col-gutter-xl">
+          <!-- Lista 1 -->
+          <div class="col-12 col-md-6">
+            <q-list bordered class="rounded-borders">
+              <q-item v-for="s in skills.left" :key="s.label">
+                <q-item-section avatar>
+                  <q-icon :name="s.icon" size="28px" color="primary" />
+                </q-item-section>
+                <q-item-section>
+                  <div class="text-subtitle2">{{ s.label }}</div>
+                  <div v-if="s.note" class="text-caption text-secondary">{{ s.note }}</div>
+                </q-item-section>
+              </q-item>
+            </q-list>
+          </div>
+
+          <!-- Lista 2 -->
+          <div class="col-12 col-md-6">
+            <q-list bordered class="rounded-borders">
+              <q-item v-for="s in skills.right" :key="s.label">
+                <q-item-section avatar>
+                  <q-icon :name="s.icon" size="28px" color="primary" />
+                </q-item-section>
+                <q-item-section>
+                  <div class="text-subtitle2">{{ s.label }}</div>
+                  <div v-if="s.note" class="text-caption text-secondary">{{ s.note }}</div>
+                </q-item-section>
+              </q-item>
+            </q-list>
+          </div>
+        </div>
+      </div>
+    </section>
     <section id="contact" class="section container">
       <div class="text-h6 text-uppercase text-weight-bold q-mb-md">Contact</div>
       <div class="row q-col-gutter-xl">
@@ -168,6 +204,27 @@ const experience = [
     bullets: ['Secure transportation of valuables', 'Customer service'],
   },
 ];
+const skills = {
+  left: [
+    { icon: '', label: 'Python', note: 'Flask' },
+    { icon: '', label: 'SQL', note: 'SQLite' },
+    { icon: '', label: 'JavaScript/TypeScript', note: 'React, Vue 3, Quasar' },
+    { icon: '', label: 'Version Control', note: 'Git, GitHub' },
+    { icon: '', label: 'Containerization', note: 'Docker' },
+    { icon: '', label: 'Web fundamentals', note: 'HTML, CSS' },
+  ],
+  right: [
+    { icon: '', label: 'Linux', note: 'Ubuntu' },
+    { icon: '', label: 'Office Software', note: 'MS Office, Google Workspace' },
+    { icon: '', label: 'Photo Editing', note: 'Adobe Photoshop, Lightroom' },
+    { icon: '', label: 'Languages', note: 'Finnish (native), English (fluent), Japanese (basic)' },
+    {
+      icon: '',
+      label: 'Soft Skills',
+      note: 'Teamwork, Communication, Team Leadership, Adaptability, Problem-Solving, Customer Service, Critical Thinking, Creativity',
+    },
+  ],
+};
 import { Notify } from 'quasar';
 const form = reactive({ name: '', email: '', message: '' });
 function onSubmit() {
