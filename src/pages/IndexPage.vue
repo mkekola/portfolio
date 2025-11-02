@@ -117,55 +117,23 @@
     </section>
     <section id="contact" class="section container">
       <div class="text-h6 text-uppercase text-weight-bold q-mb-md">Contact</div>
-      <div class="row q-col-gutter-xl">
-        <div class="col-12 col-md-6">
-          <q-form @submit.prevent="onSubmit">
-            <q-input
-              v-model="form.name"
-              label="Name"
-              outlined
-              class="q-mb-sm"
-              :rules="[(v) => !!v || 'Required']"
-            />
-            <q-input
-              v-model="form.email"
-              type="email"
-              label="Email"
-              outlined
-              class="q-mb-sm"
-              :rules="[(v) => !!v || 'Required']"
-            />
-            <q-input
-              v-model="form.message"
-              type="textarea"
-              label="Message"
-              outlined
-              autogrow
-              :rules="[(v) => !!v || 'Required']"
-            />
-            <q-btn type="submit" color="primary" label="Send" class="q-mt-md" />
-          </q-form>
-        </div>
-        <div class="col-12 col-md-6">
-          <q-card flat bordered class="q-pa-md">
-            <div class="text-subtitle2 text-uppercase text-secondary q-mb-sm">Quick Links</div>
-            <q-list dense>
-              <q-item
-                v-for="c in contacts"
-                :key="c.label"
-                clickable
-                tag="a"
-                :href="c.href"
-                target="_blank"
-                rel="noopener"
-              >
-                <q-item-section avatar><q-icon :name="c.icon" /></q-item-section>
-                <q-item-section>{{ c.label }}</q-item-section>
-              </q-item>
-            </q-list>
-          </q-card>
-        </div>
-      </div>
+      <q-card flat bordered class="q-pa-md">
+        <div class="text-subtitle2 text-uppercase text-secondary q-mb-sm">Quick Links</div>
+        <q-list dense>
+          <q-item
+            v-for="c in contacts"
+            :key="c.label"
+            clickable
+            tag="a"
+            :href="c.href"
+            target="_blank"
+            rel="noopener"
+          >
+            <q-item-section avatar><q-icon :name="c.icon" /></q-item-section>
+            <q-item-section>{{ c.label }}</q-item-section>
+          </q-item>
+        </q-list>
+      </q-card>
     </section>
 
     <footer class="q-pa-lg text-center text-caption text-secondary">
@@ -270,13 +238,8 @@ const skills = {
     },
   ],
 };
-import { Notify } from 'quasar';
-const form = reactive({ name: '', email: '', message: '' });
-function onSubmit() {
-  Notify.create({ message: 'Demo only — add backend later', color: 'grey-8' });
-}
 const contacts = [
-  { icon: 'fa-solid fa-envelope', label: 'Gmail', href: 'mailto:mariasimpression@gmail.com' },
+  { icon: 'fa-solid fa-envelope', label: 'Gmail', href: 'mailto:maria.kekola@gmail.com' },
   {
     icon: 'fa-brands fa-linkedin',
     label: 'LinkedIn',
