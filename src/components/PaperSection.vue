@@ -18,26 +18,30 @@ defineProps<{
 .paper-wrap {
   display: flex;
   justify-content: center;
-  padding: 16px; /* reunavaraa mobiilille */
-  margin-block: 20px; /* väli arkkien väliin */
+  padding: 20px 16px;
+  margin-block: 24px;
 }
 .paper-card {
-  width: min(100%, 920px); /* “paperin” maksimileveys */
-  padding: 28px;
-  border-radius: 16px;
+  width: min(100%, 900px);
+  padding: 24px;
+  border-radius: 14px;
   background: #fff;
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08); /* pehmeä varjo paperille */
-  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 8px 28px rgba(28, 33, 53, 0.1);
+  border: 1px solid rgba(28, 33, 53, 0.06);
 }
 .paper-title {
   font-family: var(--font-heading, 'Montserrat', sans-serif);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
+  color: #1b3458;
 }
-
-/* Printti: poista varjot ja täysi leveys */
+@media (min-width: 1200px) {
+  .paper-card {
+    width: 900px;
+  }
+}
 @media print {
   .paper-wrap {
     padding: 0;
