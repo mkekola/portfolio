@@ -19,9 +19,7 @@
         </div>
         <div class="col-12 col-md-5">
           <q-card flat bordered class="q-pa-md">
-            <div class="text-subtitle2 text-uppercase text-secondary q-mb-sm">
-              Hobbies & Interests
-            </div>
+            <div class="text-h6 text-uppercase text-secondary q-mb-sm">Hobbies & Interests</div>
             <div class="row q-col-gutter-md items-center">
               <div v-for="h in hobbies" :key="h.label" class="col-auto column items-center q-pa-sm">
                 <q-avatar size="48px" class="bg-grey-2"
@@ -147,12 +145,12 @@ import { reactive } from 'vue';
 import SectionNav from 'src/components/SectionNav.vue';
 const cv = reactive({ name: 'Maria Kekola' });
 const hobbies = [
-  { icon: 'camera_alt', label: 'Photography' },
-  { icon: 'brush', label: 'Arts' },
-  { icon: 'sports_esports', label: 'Games' },
-  { icon: 'sports_gymnastics', label: 'Gym Climbing' },
-  { icon: 'downhill_skiing', label: 'Downhill Skiing' },
-  { icon: 'flight_takeoff', label: 'Travel' },
+  { icon: 'fa-solid fa-camera', label: 'Photography' },
+  { icon: 'fa-solid fa-paint-brush', label: 'Arts' },
+  { icon: 'fa-solid fa-gamepad', label: 'Games' },
+  { icon: 'fa-solid fa-plane-departure', label: 'Travel' },
+  { icon: 'fa-solid fa-person-running', label: 'Gym Climbing' },
+  { icon: 'fa-solid fa-person-skiing', label: 'Downhill Skiing' },
 ];
 const education = [
   {
