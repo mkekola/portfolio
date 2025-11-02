@@ -206,20 +206,28 @@ const experience = [
 ];
 const skills = {
   left: [
-    { icon: '', label: 'Python', note: 'Flask' },
-    { icon: '', label: 'SQL', note: 'SQLite' },
-    { icon: '', label: 'JavaScript/TypeScript', note: 'React, Vue 3, Quasar' },
-    { icon: '', label: 'Version Control', note: 'Git, GitHub' },
-    { icon: '', label: 'Containerization', note: 'Docker' },
-    { icon: '', label: 'Web fundamentals', note: 'HTML, CSS' },
+    { icon: 'fa-brands fa-python', label: 'Python', note: 'Flask' },
+    { icon: 'fa-solid fa-database', label: 'SQL', note: 'SQLite' },
+    { icon: 'fa-brands fa-js', label: 'JavaScript/TypeScript', note: 'React, Vue 3, Quasar' },
+    { icon: 'fa-brands fa-git', label: 'Version Control', note: 'Git, GitHub' },
+    { icon: 'fa-brands fa-docker', label: 'Containerization', note: 'Docker' },
+    { icon: 'fa-solid fa-code', label: 'Web fundamentals', note: 'HTML, CSS' },
   ],
   right: [
-    { icon: '', label: 'Linux', note: 'Ubuntu' },
-    { icon: '', label: 'Office Software', note: 'MS Office, Google Workspace' },
-    { icon: '', label: 'Photo Editing', note: 'Adobe Photoshop, Lightroom' },
-    { icon: '', label: 'Languages', note: 'Finnish (native), English (fluent), Japanese (basic)' },
+    { icon: 'fa-brands fa-linux', label: 'Linux', note: 'Ubuntu' },
     {
-      icon: '',
+      icon: 'fa-solid fa-file-word',
+      label: 'Office Software',
+      note: 'MS Office, Google Workspace',
+    },
+    { icon: 'fa-solid fa-camera', label: 'Photo Editing', note: 'Adobe Photoshop, Lightroom' },
+    {
+      icon: 'fa-solid fa-language',
+      label: 'Languages',
+      note: 'Finnish (native), English (fluent), Japanese (basic)',
+    },
+    {
+      icon: 'fa-solid fa-user-friends',
       label: 'Soft Skills',
       note: 'Teamwork, Communication, Team Leadership, Adaptability, Problem-Solving, Customer Service, Critical Thinking, Creativity',
     },
@@ -231,9 +239,13 @@ function onSubmit() {
   Notify.create({ message: 'Demo only — add backend later', color: 'grey-8' });
 }
 const contacts = [
-  { icon: 'mail', label: 'Gmail', href: 'mailto:mariasimpression@gmail.com' },
-  { icon: 'work', label: 'LinkedIn', href: 'https://linkedin.com/in/maria-kekola-9869aa13a' },
-  { icon: 'code', label: 'GitHub', href: 'https://github.com/mkekola' },
+  { icon: 'fa-solid fa-envelope', label: 'Gmail', href: 'mailto:mariasimpression@gmail.com' },
+  {
+    icon: 'fa-brands fa-linkedin',
+    label: 'LinkedIn',
+    href: 'https://linkedin.com/in/maria-kekola-9869aa13a',
+  },
+  { icon: 'fa-brands fa-github', label: 'GitHub', href: 'https://github.com/mkekola' },
 ];
 </script>
 

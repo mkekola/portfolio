@@ -27,6 +27,7 @@ export default defineConfig((/* ctx */) => {
       // 'roboto-font-latin-ext', // this or either 'roboto-font', NEVER both!
 
       'material-icons', // optional, you are not bound to it
+      'fontawesome-v6',
     ],
 
     // Full list of options: https://v2.quasar.dev/quasar-cli-vite/quasar-config-file#build
@@ -97,6 +98,7 @@ export default defineConfig((/* ctx */) => {
           warning: '#F2C166',
         },
       },
+      iconSet: 'fontawesome-v6',
     },
 
     // animations: 'all', // --- includes all animations
