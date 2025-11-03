@@ -14,8 +14,17 @@
     <PaperSection id="about" title="About">
       <div class="row q-col-gutter-xl items-start">
         <div class="col-12 col-md-7">
-          <div class="text-h5 text-weight-bold q-mb-sm">Hello, I'm {{ cv.name.split(' ')[0] }}</div>
-          <p class="text-body1 q-mb-none"></p>
+          <div class="text-h5 text-weight-bold q-mb-sm">
+            Hello, I'm {{ cv.name.split(' ')[0] }}🫡
+          </div>
+          <p class="text-body1 q-mb-none">
+            I'm a computer science student at the University of Helsinki. My background includes
+            network and service tasks as well as customer and support roles, so I know how to
+            combine technical understanding with smooth service. I spend my free time doing
+            photography, hiking, and playing games which fuel my curiosity and problem-solving at
+            work too. I'm always eager to learn new skills and take on challenges that help me grow
+            both personally and professionally.
+          </p>
         </div>
         <div class="col-12 col-md-5">
           <q-card flat bordered class="q-pa-md">
