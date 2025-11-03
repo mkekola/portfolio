@@ -1,12 +1,8 @@
 <template>
   <div class="subnav bg-primary text-white">
     <q-toolbar class="container q-px-md toolbar">
-      <!-- oikea laita: kielikytkin -->
-      <div class="right">
-        <LanguageSwitch />
-      </div>
+      <div class="left" aria-hidden="true"></div>
 
-      <!-- keskellä: nappiryhmä -->
       <nav class="nav-center">
         <q-btn flat dense no-caps class="nav-btn" @click="to('#about')" :label="$t('nav.about')" />
         <q-btn
@@ -49,8 +45,11 @@
           @click="to('#contact')"
           :label="$t('nav.contact')"
         />
-        <!-- jätä contact pois jos poistit sen -->
       </nav>
+
+      <div class="right">
+        <LanguageSwitch />
+      </div>
     </q-toolbar>
   </div>
 </template>
@@ -63,21 +62,52 @@ function to(sel: string) {
 </script>
 
 <style scoped>
+.subnav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
 .toolbar {
-  position: relative;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 8px;
+  min-height: 56px;
+}
+.left {
+  visibility: hidden;
 }
 .nav-center {
+  justify-self: center;
   display: flex;
-  gap: 8px;
   flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
+  gap: 8px;
 }
 .right {
-  position: absolute;
-  right: 12px;
-  top: 50%;
-  transform: translateY(-50%);
+  justify-self: end;
+}
+
+@media (max-width: 640px) {
+  .toolbar {
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+    row-gap: 6px;
+  }
+  .left {
+    display: none;
+  }
+  .nav-center {
+    justify-content: center;
+  }
+  .right {
+    justify-self: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .subnav {
+    padding-block: 6px;
+  }
 }
 </style>

@@ -24,7 +24,12 @@ html,
 body,
 #q-app {
   background: #f5f6fa;
-  overflow-x: hidden;
+}
+
+.body-scroll .q-page-container {
+  overflow: visible !important;
+  height: auto !important;
+  min-height: 100vh;
 }
 
 h1,
