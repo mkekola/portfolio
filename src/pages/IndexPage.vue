@@ -27,7 +27,7 @@
             <div class="hobbies-grid">
               <div v-for="h in hobbies" :key="h.key" class="hobby-item">
                 <q-avatar size="40px" class="bg-black-2">
-                  <q-icon :name="h.icon" size="24px" color="primary" />
+                  <q-icon :name="h.icon" size="24px" color="accent" />
                 </q-avatar>
                 <div class="hobby-label" v-html="breakLabel(t(`hobbies.${h.key}`))"></div>
               </div>
@@ -53,7 +53,7 @@
       </div>
     </PaperSection>
     <PaperSection id="experience" :title="$t('section.experience')">
-      <q-timeline color="primary" layout="comfortable" side="right" dense>
+      <q-timeline color="accent" layout="comfortable" side="right" dense>
         <q-timeline-entry
           v-for="k in experience"
           :key="k"
@@ -68,7 +68,7 @@
       </q-timeline>
     </PaperSection>
     <PaperSection id="volunteer" :title="$t('section.volunteer')">
-      <q-timeline color="info" layout="comfortable" side="right" dense>
+      <q-timeline color="accent" layout="comfortable" side="right" dense>
         <q-timeline-entry
           v-for="k in volunteer"
           :key="k"
@@ -89,7 +89,7 @@
             <q-list bordered>
               <q-item v-for="s in skillsLeft" :key="s.key">
                 <q-item-section avatar
-                  ><q-icon :name="s.icon" size="28px" color="primary"
+                  ><q-icon :name="s.icon" size="28px" color="accent"
                 /></q-item-section>
                 <q-item-section>
                   <div class="text-subtitle2">{{ t(`skills.items.${s.key}.label`) }}</div>
@@ -105,7 +105,7 @@
             <q-list bordered class="rounded-borders">
               <q-item v-for="s in skillsRight" :key="s.key">
                 <q-item-section avatar>
-                  <q-icon :name="s.icon" size="28px" color="primary" />
+                  <q-icon :name="s.icon" size="28px" color="accent" />
                 </q-item-section>
                 <q-item-section>
                   <div class="text-subtitle2">{{ t(`skills.items.${s.key}.label`) }}</div>
