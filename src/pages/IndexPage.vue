@@ -28,11 +28,13 @@
         </div>
         <div class="col-12 col-md-5">
           <q-card flat bordered class="q-pa-md">
-            <div class="text-h6 text-uppercase text-secondary q-mb-sm">Hobbies & Interests</div>
-            <div class="row q-col-gutter-md items-center">
-              <div v-for="h in hobbies" :key="h.label" class="col-auto column items-center q-pa-sm">
+            <div class="text-h6 text-uppercase text-secondary q-mb-sm justify-center flex">
+              Hobbies & Interests
+            </div>
+            <div class="row q-col-gutter-md justify-center">
+              <div v-for="h in hobbies" :key="h.label" class="col-auto column items-center">
                 <q-avatar size="48px" class="bg-grey-2"
-                  ><q-icon :name="h.icon" size="28px"
+                  ><q-icon :name="h.icon" size="25px"
                 /></q-avatar>
                 <div class="text-caption q-mt-xs">{{ h.label }}</div>
               </div>
@@ -147,8 +149,8 @@ import PaperSection from 'src/components/PaperSection.vue';
 const cv = reactive({ name: 'Maria Kekola' });
 const hobbies = [
   { icon: 'fa-solid fa-camera', label: 'Photography' },
-  { icon: 'fa-solid fa-paint-brush', label: 'Arts' },
   { icon: 'fa-solid fa-gamepad', label: 'Games' },
+  { icon: 'fa-solid fa-paint-brush', label: 'Arts' },
   { icon: 'fa-solid fa-plane-departure', label: 'Travel' },
   { icon: 'fa-solid fa-person-running', label: 'Gym Climbing' },
   { icon: 'fa-solid fa-person-skiing', label: 'Downhill Skiing' },
