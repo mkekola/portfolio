@@ -173,7 +173,7 @@ const messages = {
     },
     experience: {
       finavia: {
-        role: 'Network Intern',
+        role: 'Network Trainee',
         company: 'Finavia',
         period: 'May 2023 - Present',
         details: [
