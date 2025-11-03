@@ -24,12 +24,12 @@
             <div class="text-h6 text-uppercase text-secondary q-mb-sm justify-center flex">
               {{ t('hobbies.title') }}
             </div>
-            <div class="row q-col-gutter-md justify-center">
-              <div v-for="h in hobbies" :key="h.key" class="col-auto column items-center">
-                <q-avatar size="48px" class="bg-grey-2">
-                  <q-icon :name="h.icon" size="25px" />
+            <div class="hobbies-grid">
+              <div v-for="h in hobbies" :key="h.key" class="hobby-item">
+                <q-avatar size="40px" class="bg-grey-2">
+                  <q-icon :name="h.icon" size="24px" />
                 </q-avatar>
-                <div class="text-caption q-mt-xs">{{ t(`hobbies.${h.key}`) }}</div>
+                <div class="hobby-label" v-html="breakLabel(t(`hobbies.${h.key}`))"></div>
               </div>
             </div>
           </q-card>
@@ -154,6 +154,10 @@ const t: typeof i18n.t = i18n.t.bind(i18n);
 const tm: typeof i18n.tm = i18n.tm.bind(i18n);
 
 const cv = reactive({ name: 'Maria Kekola' });
+function breakLabel(s: string) {
+  // korvaa VAIN ensimmäisen välilyönnin rivinvaihdolla
+  return s.replace(/\s+/, '<br/>');
+}
 const hobbies = [
   { icon: 'fa-solid fa-camera', key: 'photo' },
   { icon: 'fa-solid fa-gamepad', key: 'games' },
@@ -230,5 +234,32 @@ const contacts = [
 }
 .text-subtitle2 {
   font-size: 1.1rem;
+}
+.hobbies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: 15px 10px;
+  justify-items: center;
+}
+
+.hobby-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hobby-label {
+  text-align: center;
+  margin-top: 6px;
+  line-height: 1.15;
+  min-height: 2.3em;
+  word-break: break-word;
+  hyphens: auto;
+}
+
+@media (max-width: 480px) {
+  .hobbies-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 </style>

@@ -29,7 +29,7 @@ const messages = {
       games: 'Pelaaminen',
       hiking: 'Vaeltaminen',
       art: 'Taiteilu',
-      cooking: 'Kokkaus',
+      cooking: 'Ruoanlaitto',
       travel: 'Matkustelu',
       climbing: 'Kiipeily',
       skiing: 'Laskettelu',
