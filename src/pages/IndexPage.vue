@@ -11,60 +11,57 @@
 
     <SectionNav />
 
-    <PaperSection id="about" title="About">
+    <PaperSection id="about" :title="$t('section.about')">
       <div class="row q-col-gutter-xl items-start">
         <div class="col-12 col-md-7">
           <div class="text-h5 text-weight-bold q-mb-sm">
-            Hello, I'm {{ cv.name.split(' ')[0] }}🫡
+            {{ $t('about.hello') }}
           </div>
-          <p class="text-body1 q-mb-none">
-            I'm a computer science student at the University of Helsinki. My background includes
-            network and service tasks as well as customer and support roles, so I know how to
-            combine technical understanding with smooth service. I spend my free time doing
-            photography, hiking, and playing games which fuel my curiosity and problem-solving at
-            work too. I'm always eager to learn new skills and take on challenges that help me grow
-            both personally and professionally.
-          </p>
+          <p class="text-body1 q-mb-none">{{ $t('about.body') }}</p>
         </div>
         <div class="col-12 col-md-5">
           <q-card flat bordered class="q-pa-md">
             <div class="text-h6 text-uppercase text-secondary q-mb-sm justify-center flex">
-              Hobbies & Interests
+              {{ t('hobbies.title') }}
             </div>
             <div class="row q-col-gutter-md justify-center">
-              <div v-for="h in hobbies" :key="h.label" class="col-auto column items-center">
-                <q-avatar size="48px" class="bg-grey-2"
-                  ><q-icon :name="h.icon" size="25px"
-                /></q-avatar>
-                <div class="text-caption q-mt-xs">{{ h.label }}</div>
+              <div v-for="h in hobbies" :key="h.key" class="col-auto column items-center">
+                <q-avatar size="48px" class="bg-grey-2">
+                  <q-icon :name="h.icon" size="25px" />
+                </q-avatar>
+                <div class="text-caption q-mt-xs">{{ t(`hobbies.${h.key}`) }}</div>
               </div>
             </div>
           </q-card>
         </div>
       </div>
     </PaperSection>
-    <PaperSection id="education" title="Education">
+    <PaperSection id="education" :title="$t('section.education')">
       <div class="container">
         <q-list bordered class="rounded-borders">
-          <q-item v-for="ed in education" :key="ed.school">
+          <q-item v-for="k in education" :key="k">
             <q-item-section>
-              <div class="text-subtitle2">{{ ed.degree }} — {{ ed.school }}</div>
-              <div class="text-caption text-secondary">{{ ed.period }}</div>
+              <div class="text-subtitle2">
+                {{ t(`education.${k}.degree`) }} — {{ t(`education.${k}.school`) }}
+              </div>
+              <div class="text-caption text-secondary">
+                {{ t(`education.${k}.period`) }}
+              </div>
             </q-item-section>
           </q-item>
         </q-list>
       </div>
     </PaperSection>
-    <PaperSection id="experience" title="Experience">
+    <PaperSection id="experience" :title="$t('section.experience')">
       <q-timeline color="primary" layout="comfortable" side="right" dense>
         <q-timeline-entry
-          v-for="job in experience"
-          :key="job.company"
-          :title="job.role + ' — ' + job.company"
-          :subtitle="job.period"
+          v-for="k in experience"
+          :key="k"
+          :title="`${t(`experience.${k}.role`)} — ${t(`experience.${k}.company`)}`"
+          :subtitle="t(`experience.${k}.period`)"
         >
-          <ul class="list-plain q-mt-sm q-mb-none" role="list">
-            <li v-for="(b, j) in job.bullets" :key="j" role="listitem">{{ b }}</li>
+          <ul class="list-plain q-mt-sm q-mb-none">
+            <li v-for="(b, i) in tm(`experience.${k}.details`) as string[]" :key="i">{{ b }}</li>
           </ul>
           <div class="q-mt-sm"></div>
         </q-timeline-entry>
@@ -73,29 +70,32 @@
     <PaperSection id="volunteer" title="Volunteer Work">
       <q-timeline color="info" layout="comfortable" side="right" dense>
         <q-timeline-entry
-          v-for="(v, i) in volunteer"
-          :key="i"
-          :title="v.role + ' — ' + v.org"
-          :subtitle="v.period"
+          v-for="k in volunteer"
+          :key="k"
+          :title="`${t(`volunteer.${k}.role`)} — ${t(`volunteer.${k}.organization`)}`"
+          :subtitle="t(`volunteer.${k}.period`)"
         >
-          <ul class="list-plain q-mt-xs q-mb-none" role="list">
-            <li v-for="(b, j) in v.bullets" :key="j" role="listitem">{{ b }}</li>
+          <ul class="list-plain q-mt-sm q-mb-none">
+            <li v-for="(b, i) in tm(`volunteer.${k}.details`) as string[]" :key="i">{{ b }}</li>
           </ul>
+          <div class="q-mt-sm"></div>
         </q-timeline-entry>
       </q-timeline>
     </PaperSection>
-    <PaperSection id="skills" title="Skills">
+    <PaperSection id="skills" :title="$t('section.skills')">
       <div class="container">
         <div class="row q-col-gutter-xl">
           <div class="col-12 col-md-6">
-            <q-list bordered class="rounded-borders">
-              <q-item v-for="s in skills.left" :key="s.label">
-                <q-item-section avatar>
-                  <q-icon :name="s.icon" size="28px" color="primary" />
-                </q-item-section>
+            <q-list bordered>
+              <q-item v-for="s in skillsLeft" :key="s.key">
+                <q-item-section avatar
+                  ><q-icon :name="s.icon" size="28px" color="primary"
+                /></q-item-section>
                 <q-item-section>
-                  <div class="text-subtitle2">{{ s.label }}</div>
-                  <div v-if="s.note" class="text-caption text-secondary">{{ s.note }}</div>
+                  <div class="text-subtitle2">{{ t(`skills.items.${s.key}.label`) }}</div>
+                  <div class="text-caption text-secondary">
+                    {{ t(`skills.items.${s.key}.note`) }}
+                  </div>
                 </q-item-section>
               </q-item>
             </q-list>
@@ -103,13 +103,15 @@
 
           <div class="col-12 col-md-6">
             <q-list bordered class="rounded-borders">
-              <q-item v-for="s in skills.right" :key="s.label">
+              <q-item v-for="s in skillsRight" :key="s.key">
                 <q-item-section avatar>
                   <q-icon :name="s.icon" size="28px" color="primary" />
                 </q-item-section>
                 <q-item-section>
-                  <div class="text-subtitle2">{{ s.label }}</div>
-                  <div v-if="s.note" class="text-caption text-secondary">{{ s.note }}</div>
+                  <div class="text-subtitle2">{{ t(`skills.items.${s.key}.label`) }}</div>
+                  <div class="text-caption text-secondary">
+                    {{ t(`skills.items.${s.key}.note`) }}
+                  </div>
                 </q-item-section>
               </q-item>
             </q-list>
@@ -117,7 +119,7 @@
         </div>
       </div>
     </PaperSection>
-    <PaperSection id="contact" title="Contact">
+    <PaperSection id="contact" :title="$t('section.contact')">
       <q-card flat bordered class="q-pa-md">
         <q-list dense>
           <q-item
@@ -146,99 +148,48 @@
 import { reactive } from 'vue';
 import SectionNav from 'src/components/SectionNav.vue';
 import PaperSection from 'src/components/PaperSection.vue';
+import { useI18n } from 'vue-i18n';
+const i18n = useI18n();
+const t: typeof i18n.t = i18n.t.bind(i18n);
+const tm: typeof i18n.tm = i18n.tm.bind(i18n);
+
 const cv = reactive({ name: 'Maria Kekola' });
 const hobbies = [
-  { icon: 'fa-solid fa-camera', label: 'Photography' },
-  { icon: 'fa-solid fa-gamepad', label: 'Games' },
-  { icon: 'fa-solid fa-paint-brush', label: 'Arts' },
-  { icon: 'fa-solid fa-plane-departure', label: 'Travel' },
-  { icon: 'fa-solid fa-person-running', label: 'Gym Climbing' },
-  { icon: 'fa-solid fa-person-skiing', label: 'Downhill Skiing' },
+  { icon: 'fa-solid fa-camera', key: 'photo' },
+  { icon: 'fa-solid fa-gamepad', key: 'games' },
+  { icon: 'fa-solid fa-paint-brush', key: 'art' },
+  { icon: 'fa-solid fa-plane-departure', key: 'travel' },
+  { icon: 'fa-solid fa-utensils', key: 'cooking' },
+  { icon: 'fa-solid fa-person-running', key: 'climbing' },
+  { icon: 'fa-solid fa-person-skiing', key: 'skiing' },
 ];
-const education = [
-  {
-    degree: 'B.Sc. Computer Science',
-    school: 'University of Helsinki',
-    period: '2021–2026(ongoing)',
-  },
+const education = ['bsc'];
+const experience = ['finavia', 'csfm', 'csfc'];
+const volunteer = ['treasurer', 'boardMember', 'officer'];
+const skillsLeft = [
+  { icon: 'fa-brands fa-python', key: 'python' },
+  { icon: 'fa-solid fa-database', key: 'sql' },
+  { icon: 'fa-brands fa-js', key: 'js' },
+  { icon: 'fa-brands fa-git', key: 'git' },
+  { icon: 'fa-brands fa-docker', key: 'docker' },
+  { icon: 'fa-solid fa-code', key: 'web' },
 ];
-const experience = [
+const skillsRight = [
+  { icon: 'fa-brands fa-linux', key: 'os' },
   {
-    role: 'Network Trainee',
-    company: 'Finavia Oyj',
-    period: '2023–Now',
-    bullets: [
-      'Configurations',
-      'Network monitoring',
-      'Troubleshooting',
-      'Documentation',
-      'Customer support',
-    ],
+    icon: 'fa-solid fa-file-word',
+    key: 'office',
+  },
+  { icon: 'fa-solid fa-camera', key: 'photo' },
+  {
+    icon: 'fa-solid fa-language',
+    key: 'lang',
   },
   {
-    role: 'Service Manager',
-    company: 'CSF Security Oy',
-    period: '2019–2022',
-    bullets: ['Team lead', 'Customer support', 'Scheduling', 'Reporting'],
-  },
-  {
-    role: 'Cash-in-Transit Guard',
-    company: 'CSF Security Oy',
-    period: '2017–2019',
-    bullets: ['Secure transportation of valuables', 'Customer service'],
+    icon: 'fa-solid fa-user-friends',
+    key: 'soft',
   },
 ];
-const volunteer = [
-  {
-    role: 'Treasurer',
-    org: 'Ylioppilaskamera ry',
-    period: '2023–ongoing',
-    bullets: ['Budget planning, financial reporting, membership management.'],
-  },
-  {
-    role: 'Board Member',
-    org: 'Ylioppilaskamera ry',
-    period: '2023-ongoing',
-    bullets: ['Event planning, organizing workshops'],
-  },
-  {
-    role: 'Publicist, Social Media Manager',
-    org: 'TKO-äly ry',
-    period: '2022–2023',
-    bullets: [
-      'Content creation, social media management, event promotion, graphic design, newsletter production.',
-    ],
-  },
-];
-const skills = {
-  left: [
-    { icon: 'fa-brands fa-python', label: 'Python', note: 'Flask' },
-    { icon: 'fa-solid fa-database', label: 'SQL', note: 'SQLite' },
-    { icon: 'fa-brands fa-js', label: 'JavaScript/TypeScript', note: 'React, Vue 3, Quasar' },
-    { icon: 'fa-brands fa-git', label: 'Version Control', note: 'Git, GitHub' },
-    { icon: 'fa-brands fa-docker', label: 'Containerization', note: 'Docker' },
-    { icon: 'fa-solid fa-code', label: 'Web fundamentals', note: 'HTML, CSS' },
-  ],
-  right: [
-    { icon: 'fa-brands fa-linux', label: 'Linux', note: 'Ubuntu' },
-    {
-      icon: 'fa-solid fa-file-word',
-      label: 'Office Software',
-      note: 'MS Office, Google Workspace',
-    },
-    { icon: 'fa-solid fa-camera', label: 'Photo Editing', note: 'Adobe Photoshop, Lightroom' },
-    {
-      icon: 'fa-solid fa-language',
-      label: 'Languages',
-      note: 'Finnish (native), English (fluent), Japanese (basic)',
-    },
-    {
-      icon: 'fa-solid fa-user-friends',
-      label: 'Soft Skills',
-      note: 'Teamwork, Communication, Team Leadership, Adaptability, Problem-Solving, Customer Service, Critical Thinking, Creativity',
-    },
-  ],
-};
 const contacts = [
   { icon: 'fa-solid fa-envelope', label: 'Gmail', href: 'mailto:maria.kekola@gmail.com' },
   {
