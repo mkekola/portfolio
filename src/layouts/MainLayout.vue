@@ -1,5 +1,5 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
+  <q-layout view="lHh Lpr lFf" class="body-scroll">
     <q-page-container>
       <router-view />
     </q-page-container>
