@@ -76,7 +76,6 @@
     <PaperSection id="skills" title="Skills">
       <div class="container">
         <div class="row q-col-gutter-xl">
-          <!-- Lista 1 -->
           <div class="col-12 col-md-6">
             <q-list bordered class="rounded-borders">
               <q-item v-for="s in skills.left" :key="s.label">
@@ -91,7 +90,6 @@
             </q-list>
           </div>
 
-          <!-- Lista 2 -->
           <div class="col-12 col-md-6">
             <q-list bordered class="rounded-borders">
               <q-item v-for="s in skills.right" :key="s.label">
