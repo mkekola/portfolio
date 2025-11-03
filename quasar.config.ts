@@ -88,13 +88,13 @@ export default defineConfig((/* ctx */) => {
       plugins: ['Notify'],
       config: {
         brand: {
-          primary: '#B9A98E',
+          primary: '#706D54',
           secondary: '#130D0D', // Driftwood Beige
           accent: '#F8C476', // Alpine Gold
           dark: '#130D0D',
           positive: '#7AC48A',
           negative: '#C85A54',
-          info: '#B9A98E',
+          info: '#706D54',
           warning: '#F2C166',
         },
       },
