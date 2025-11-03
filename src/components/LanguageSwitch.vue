@@ -3,10 +3,11 @@
     v-model="model"
     :options="opts"
     size="sm"
+    rounded
     color="accent"
     text-color="dark"
     unelevated
-    toggle-color="accent"
+    toggle-color="primary"
     :ripple="false"
     aria-label="Change language"
     class="lang-toggle"

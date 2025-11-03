@@ -4,6 +4,7 @@
     :options="opts"
     size="sm"
     push
+    rounded
     unelevated
     color="accent"
     text-color="dark"
