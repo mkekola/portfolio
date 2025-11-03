@@ -49,6 +49,7 @@
 
       <div class="right">
         <LanguageSwitch />
+        <ThemeSwitch />
       </div>
     </q-toolbar>
   </div>
@@ -56,6 +57,7 @@
 
 <script setup lang="ts">
 import LanguageSwitch from 'src/components/LanguageSwitch.vue';
+import ThemeSwitch from 'src/components/ThemeSwitch.vue';
 function to(sel: string) {
   document.querySelector(sel)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
@@ -86,6 +88,9 @@ function to(sel: string) {
 }
 .right {
   justify-self: end;
+  display: flex;
+  gap: 8px;
+  align-items: center;
 }
 
 @media (max-width: 640px) {
@@ -94,14 +99,21 @@ function to(sel: string) {
     grid-auto-rows: auto;
     row-gap: 6px;
   }
+
   .left {
-    display: none;
+    visibility: hidden;
   }
   .nav-center {
-    justify-content: center;
+    justify-self: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
   }
   .right {
-    justify-self: center;
+    justify-self: end;
+    display: flex;
+    gap: 8px;
+    align-items: center;
   }
 }
 

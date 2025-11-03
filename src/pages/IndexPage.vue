@@ -26,8 +26,8 @@
             </div>
             <div class="hobbies-grid">
               <div v-for="h in hobbies" :key="h.key" class="hobby-item">
-                <q-avatar size="40px" class="bg-grey-2">
-                  <q-icon :name="h.icon" size="24px" />
+                <q-avatar size="40px" class="bg-black-2">
+                  <q-icon :name="h.icon" size="24px" color="primary" />
                 </q-avatar>
                 <div class="hobby-label" v-html="breakLabel(t(`hobbies.${h.key}`))"></div>
               </div>
@@ -155,7 +155,6 @@ const tm: typeof i18n.tm = i18n.tm.bind(i18n);
 
 const cv = reactive({ name: 'Maria Kekola' });
 function breakLabel(s: string) {
-  // korvaa VAIN ensimmäisen välilyönnin rivinvaihdolla
   return s.replace(/\s+/, '<br/>');
 }
 const hobbies = [

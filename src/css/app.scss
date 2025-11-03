@@ -12,18 +12,11 @@ body {
   font-size: 16px;
   line-height: 1.6;
   text-rendering: optimizeLegibility;
+  background: #e2e3e6;
 }
 
-.body-scroll .q-page-container {
-  overflow: visible !important;
-  height: auto !important;
-  min-height: 100vh;
-}
-
-html,
-body,
-#q-app {
-  background: #f5f6fa;
+body.q-dark {
+  background: #19191a;
 }
 
 .body-scroll .q-page-container {

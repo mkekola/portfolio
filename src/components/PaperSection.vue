@@ -25,7 +25,6 @@ defineProps<{
   width: min(100%, 900px);
   padding: 24px;
   border-radius: 14px;
-  background: #fff;
   box-shadow: none;
   position: relative;
 }
@@ -50,6 +49,16 @@ defineProps<{
   letter-spacing: 0.06em;
   margin-bottom: 14px;
   color: #706d54;
+}
+.q-dark .paper-card {
+  background: #0f141a;
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow:
+    0 8px 28px rgba(0, 0, 0, 0.4),
+    0 1px 0 rgba(255, 255, 255, 0.06);
+}
+.q-dark .paper-title {
+  color: #b9bbbd;
 }
 @media (min-width: 1200px) {
   .paper-card {
