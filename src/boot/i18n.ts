@@ -174,7 +174,7 @@ const messages = {
     experience: {
       finavia: {
         role: 'Network Trainee',
-        company: 'Finavia',
+        company: 'Finavia Oyj',
         period: 'May 2023 - Present',
         details: [
           'Configuration',
