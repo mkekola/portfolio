@@ -67,7 +67,7 @@
         </q-timeline-entry>
       </q-timeline>
     </PaperSection>
-    <PaperSection id="volunteer" title="Volunteer Work">
+    <PaperSection id="volunteer" :title="$t('section.volunteer')">
       <q-timeline color="info" layout="comfortable" side="right" dense>
         <q-timeline-entry
           v-for="k in volunteer"

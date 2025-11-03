@@ -21,7 +21,7 @@ const messages = {
     },
     about: {
       hello: 'Päivää! Olen Maria 🫡',
-      body: 'Opiskelen tietojenkäsittelytiedettä Helsingin yliopistossa. Taustaani kuuluu verkko- ja palvelutehtäviä sekä asiakas- ja tukirooleja, joten osaan yhdistää teknisen ymmärryksen sujuvaan palveluun. Vapaa-aikani vietän valokuvauksen, vaeltamisen ja pelaamisen parissa, jotka ruokkivat uteliaisuuttani ja ongelmanratkaisutaitojani myös työssä. Olen aina innokas oppimaan uusia taitoja ja tarttumaan haasteisiin, jotka auttavat minua kasvamaan sekä henkilökohtaisesti että ammatillisesti.',
+      body: 'Opiskelen viimeistä kandivuotta tietojenkäsittelytiedettä Helsingin yliopistossa. Taustaani kuuluu verkko- ja palvelutehtäviä sekä asiakas- ja tukirooleja, joten osaan yhdistää teknisen ymmärryksen sujuvaan palveluun. Vapaa-aikani vietän valokuvauksen, retkeilyn ja pelaamisen parissa, jotka ruokkivat uteliaisuuttani ja ongelmanratkaisutaitojani myös työssä. Olen aina innokas oppimaan uusia taitoja ja tarttumaan haasteisiin, jotka auttavat minua kasvamaan sekä persoonana että ammatillisesti.',
     },
     hobbies: {
       title: 'Harrastukset',
