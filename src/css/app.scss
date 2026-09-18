@@ -83,3 +83,41 @@ h4,
 html {
   scroll-behavior: smooth;
 }
+
+// Force a clean, high-contrast palette when printing, regardless of the
+// light/dark mode active on screen.
+@media print {
+  body,
+  body.body--dark {
+    --page-bg: #ffffff;
+    --card-bg: #ffffff;
+    --card-border: #dddddd;
+    --card-shadow: none;
+    --nav-bg: transparent;
+    --nav-border: transparent;
+    --text-heading: #17171c;
+    --text-body: #2e2e35;
+    --text-muted: #55555c;
+    --chip-bg: #f3f3f5;
+    --chip-border: #dddddd;
+    --divider: #dddddd;
+    --accent-solid: #4a3aa8;
+    --accent-gradient: none;
+    --button-shadow: none;
+  }
+
+  * {
+    animation: none !important;
+    transition: none !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  .text-accent {
+    color: #4a3aa8 !important;
+  }
+  .bg-accent {
+    background: #4a3aa8 !important;
+  }
+}

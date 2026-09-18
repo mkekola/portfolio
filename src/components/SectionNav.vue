@@ -76,6 +76,11 @@ function to(sel: string) {
   justify-content: center;
   padding: 0 16px;
 }
+@media print {
+  .nav-wrap {
+    display: none;
+  }
+}
 .nav-pill {
   width: min(100%, 1100px);
   display: flex;

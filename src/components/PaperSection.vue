@@ -93,10 +93,9 @@ defineProps<{
   }
   .paper-card {
     width: 100%;
-    box-shadow: none;
-    border-color: #ddd;
-    backdrop-filter: none;
-    background: #fff;
+  }
+  .section-head {
+    break-after: avoid;
   }
 }
 </style>

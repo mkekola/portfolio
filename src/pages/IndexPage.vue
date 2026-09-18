@@ -624,4 +624,43 @@ const contacts = [
     justify-content: center;
   }
 }
+
+@media print {
+  .bg-blobs {
+    display: none;
+  }
+  .badge,
+  .hero-cta,
+  .hero-photo {
+    display: none;
+  }
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 0 0 16pt;
+    gap: 0;
+  }
+  .hero-name {
+    font-size: 26pt;
+    margin-bottom: 4pt;
+  }
+  .hero-tagline {
+    background: none;
+    -webkit-background-clip: initial;
+    background-clip: initial;
+    color: var(--accent-solid);
+    font-size: 13pt;
+    margin-bottom: 6pt;
+  }
+  .hero-subtitle {
+    font-size: 10.5pt;
+    max-width: none;
+    margin-bottom: 0;
+  }
+  .info-card,
+  .hobbies-card,
+  .skill-tile,
+  .glass-timeline :deep(.q-timeline__entry) {
+    break-inside: avoid;
+  }
+}
 </style>
