@@ -39,14 +39,14 @@ defineProps<{
   padding: 0 4px;
 }
 .section-idx {
-  font-family: var(--font-heading, 'Montserrat', sans-serif);
+  font-family: var(--font-heading, 'Plus Jakarta Sans', sans-serif);
   font-weight: 700;
   font-size: 14px;
   letter-spacing: 0.14em;
   color: var(--accent-solid);
 }
 .section-title {
-  font-family: var(--font-heading, 'Montserrat', sans-serif);
+  font-family: var(--font-heading, 'Plus Jakarta Sans', sans-serif);
   font-weight: 800;
   font-size: 26px;
   color: var(--text-heading);
