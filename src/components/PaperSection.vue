@@ -1,9 +1,15 @@
 <template>
   <section :id="id" class="paper-wrap">
-    <q-card flat bordered class="paper-card">
-      <div v-if="title" class="paper-title">{{ title }}</div>
-      <slot />
-    </q-card>
+    <div class="paper-inner">
+      <div v-if="title" class="section-head">
+        <span v-if="index" class="section-idx">{{ index }}</span>
+        <div class="section-title">{{ title }}</div>
+        <div class="section-line"></div>
+      </div>
+      <div class="paper-card">
+        <slot />
+      </div>
+    </div>
   </section>
 </template>
 
@@ -11,6 +17,7 @@
 defineProps<{
   id?: string;
   title?: string;
+  index?: string;
 }>();
 </script>
 
@@ -21,50 +28,44 @@ defineProps<{
   padding: 20px 16px;
   margin-block: 24px;
 }
-.paper-card {
-  width: min(100%, 900px);
-  padding: 24px;
-  border-radius: 14px;
-  box-shadow: none;
-  position: relative;
+.paper-inner {
+  width: min(100%, 1100px);
 }
-.paper-card::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  pointer-events: none;
-  z-index: -1;
-  box-shadow:
-    0 8px 28px rgba(28, 33, 53, 0.1),
-    0 1px 0 rgba(28, 33, 53, 0.06);
+.section-head {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding: 0 4px;
 }
-.paper-wrap {
-  isolation: isolate;
-}
-.paper-title {
+.section-idx {
   font-family: var(--font-heading, 'Montserrat', sans-serif);
   font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  margin-bottom: 14px;
-  color: #706d54;
+  font-size: 14px;
+  letter-spacing: 0.14em;
+  color: var(--accent-solid);
 }
-.q-dark .paper-card {
-  background: #0f141a;
-  border-color: rgba(255, 255, 255, 0.08);
-  box-shadow:
-    0 8px 28px rgba(0, 0, 0, 0.4),
-    0 1px 0 rgba(255, 255, 255, 0.06);
+.section-title {
+  font-family: var(--font-heading, 'Montserrat', sans-serif);
+  font-weight: 800;
+  font-size: 26px;
+  color: var(--text-heading);
 }
-.q-dark .paper-title {
-  color: #b9bbbd;
+.section-line {
+  flex: 1;
+  height: 1px;
+  background: var(--divider);
 }
-@media (min-width: 1200px) {
-  .paper-card {
-    width: 900px;
-  }
+.paper-card {
+  padding: 32px;
+  border-radius: 22px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  box-shadow: var(--card-shadow);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
 }
+
 @media print {
   .paper-wrap {
     padding: 0;
@@ -74,6 +75,8 @@ defineProps<{
     width: 100%;
     box-shadow: none;
     border-color: #ddd;
+    backdrop-filter: none;
+    background: #fff;
   }
 }
 </style>
