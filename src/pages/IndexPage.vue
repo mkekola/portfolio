@@ -285,6 +285,30 @@ const contacts = [
   border-radius: 50%;
   background: #4cc38a;
   margin-right: 9px;
+  animation: badge-pulse 1.8s ease-out infinite;
+}
+@keyframes badge-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(76, 195, 138, 0.6);
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(1.2);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(76, 195, 138, 0);
+    transform: scale(1);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(76, 195, 138, 0);
+    transform: scale(1);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .badge .dot {
+    animation: none;
+    box-shadow: 0 0 0 3px rgba(76, 195, 138, 0.35);
+  }
 }
 .hero-name {
   font-size: 48px;
@@ -539,23 +563,29 @@ const contacts = [
   opacity: 1;
 }
 .glass-timeline :deep(.timeline-entry--active .q-timeline__dot::before) {
-  animation: timeline-pulse 2s ease-out infinite;
+  animation: timeline-pulse 1.8s ease-out infinite;
 }
 @keyframes timeline-pulse {
   0% {
-    box-shadow: 0 0 0 0 oklch(45% 0.19 300 / 0.4);
+    box-shadow: 0 0 0 0 oklch(45% 0.19 300 / 0.6);
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(1.2);
   }
   70% {
-    box-shadow: 0 0 0 9px oklch(45% 0.19 300 / 0);
+    box-shadow: 0 0 0 14px oklch(45% 0.19 300 / 0);
+    transform: scale(1);
   }
   100% {
     box-shadow: 0 0 0 0 oklch(45% 0.19 300 / 0);
+    transform: scale(1);
   }
 }
 @media (prefers-reduced-motion: reduce) {
   .glass-timeline :deep(.timeline-entry--active .q-timeline__dot::before) {
     animation: none;
-    box-shadow: 0 0 0 4px oklch(45% 0.19 300 / 0.25);
+    box-shadow: 0 0 0 5px oklch(45% 0.19 300 / 0.35);
   }
 }
 
