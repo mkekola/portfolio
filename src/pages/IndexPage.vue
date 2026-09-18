@@ -166,7 +166,7 @@ const hobbies = [
   { icon: 'fa-solid fa-person-running', key: 'climbing' },
   { icon: 'fa-solid fa-person-skiing', key: 'skiing' },
 ];
-const education = ['bsc'];
+const education = ['msc', 'bsc'];
 const experience = ['finavia', 'csfm', 'csfc'];
 const volunteer = ['treasurer', 'boardMember', 'officer'];
 const skillsLeft = [

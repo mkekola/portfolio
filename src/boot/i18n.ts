@@ -20,8 +20,8 @@ const messages = {
       contact: 'Yhteystiedot',
     },
     about: {
-      hello: 'Päivää! Olen Maria 🫡',
-      body: 'Opiskelen viimeistä kandivuotta tietojenkäsittelytiedettä Helsingin yliopistossa. Taustaani kuuluu verkko- ja palvelutehtäviä sekä asiakas- ja tukirooleja, joten osaan yhdistää teknisen ymmärryksen sujuvaan palveluun. Vapaa-aikani vietän valokuvauksen, retkeilyn ja pelaamisen parissa, jotka ruokkivat uteliaisuuttani ja ongelmanratkaisutaitojani myös työssä. Olen aina innokas oppimaan uusia taitoja ja tarttumaan haasteisiin, jotka auttavat minua kasvamaan sekä persoonana että ammatillisesti.',
+      hello: 'Helou! Maria täällä 👋🏻',
+      body: 'Valmistuin tietojenkäsittelytieteen kandidaatiksi Helsingin yliopistosta toukokuussa 2026. Etsin nyt ensisijaisesti kokopäivätyötä, joka haastaa ja kehittää "työelämä minääni". Maisterin tutkinto etenee taustalla työn ohessa, kun aikataulu sen sallii. Taustani verkko- ja palvelutehtävistä sekä asiakastyöstä on opettanut yhdistämään teknisen osaamisen ja ihmisten kuuntelemisen. Vapaa-ajalla tartun usein kameraan, retkeilyreppuun tai peliohjaimeen. Sama uteliaisuus sekä innostuneisuus vie minut uusille poluille ja uusien asioiden pariin myös töissä.',
     },
     hobbies: {
       title: 'Harrastukset',
@@ -35,10 +35,15 @@ const messages = {
       skiing: 'Laskettelu',
     },
     education: {
+      msc: {
+        degree: 'Maisterin tutkinto, Tietojenkäsittelytiede',
+        school: 'Helsingin yliopisto',
+        period: '2026 Syyskuu - Nykyhetki',
+      },
       bsc: {
         degree: 'Kandidaatin tutkinto, Tietojenkäsittelytiede',
         school: 'Helsingin yliopisto',
-        period: '2021 - Nykyhetki',
+        period: '2021 - 2026 Toukokuu',
       },
     },
     experience: {
@@ -150,8 +155,8 @@ const messages = {
       contact: 'Contact',
     },
     about: {
-      hello: "Hello! I'm Maria 🫡",
-      body: "I'm a computer science student at the University of Helsinki. My background includes network and service tasks as well as customer and support roles, so I know how to combine technical understanding with smooth service. I spend my free time doing photography, hiking, and playing games which fuel my curiosity and problem-solving at work too. I'm always eager to learn new skills and take on challenges that help me grow both personally and professionally.",
+      hello: "Hey! Maria here 👋🏻",
+      body: "I graduated with a B.Sc. in Computer Science from the University of Helsinki in May 2026. I'm primarily looking for full-time work that challenges and grows my professional self. A Master's degree is progressing in the background alongside work, when time allows. My experience in network and service roles, plus hands-on customer work, taught me to combine technical skills with listening to people. In my free time I'm usually behind a camera, on a hiking trail, or holding a game controller. The same curiosity and enthusiasm that takes me down new trails also draws me toward new things at work.",
     },
     hobbies: {
       title: 'Hobbies & Interests',
@@ -165,10 +170,15 @@ const messages = {
       skiing: 'Downhill Skiing',
     },
     education: {
+      msc: {
+        degree: 'M.Sc. Computer Science',
+        school: 'University of Helsinki',
+        period: 'September 2026 - Present',
+      },
       bsc: {
         degree: 'B.Sc. Computer Science',
         school: 'University of Helsinki',
-        period: '2021 - Present',
+        period: '2021 - May 2026',
       },
     },
     experience: {
