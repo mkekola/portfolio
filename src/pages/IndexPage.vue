@@ -84,6 +84,7 @@
           <q-timeline-entry
             v-for="k in experience"
             :key="k"
+            :class="{ 'timeline-entry--active': k === currentExperienceKey }"
             :title="`${t(`experience.${k}.role`)} — ${t(`experience.${k}.company`)}`"
             :subtitle="t(`experience.${k}.period`)"
           >
@@ -182,6 +183,7 @@ const hobbies = [
 ];
 const education = ['msc', 'bsc'];
 const experience = ['finavia', 'csfm', 'csfc'];
+const currentExperienceKey = 'finavia';
 const volunteer = ['treasurer', 'officer'];
 const skills = [
   { icon: 'fa-brands fa-python', key: 'python' },
@@ -533,6 +535,26 @@ const contacts = [
   color: var(--text-muted);
   font-weight: 600;
   opacity: 1;
+}
+.glass-timeline :deep(.timeline-entry--active .q-timeline__dot::before) {
+  animation: timeline-pulse 2s ease-out infinite;
+}
+@keyframes timeline-pulse {
+  0% {
+    box-shadow: 0 0 0 0 oklch(45% 0.19 300 / 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 9px oklch(45% 0.19 300 / 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 oklch(45% 0.19 300 / 0);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .glass-timeline :deep(.timeline-entry--active .q-timeline__dot::before) {
+    animation: none;
+    box-shadow: 0 0 0 4px oklch(45% 0.19 300 / 0.25);
+  }
 }
 
 @media (max-width: 900px) {
