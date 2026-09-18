@@ -238,6 +238,11 @@ const contacts = [
     transform: scale(1.6);
   }
 }
+@media (min-width: 1800px) {
+  .blob {
+    transform: scale(2.1);
+  }
+}
 .blob-a {
   top: -160px;
   left: -160px;
