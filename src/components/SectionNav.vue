@@ -87,8 +87,15 @@ function to(sel: string) {
   background: var(--nav-bg);
   border: 1px solid var(--nav-border);
   box-shadow: var(--card-shadow);
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  backdrop-filter: blur(8px) saturate(140%);
+  -webkit-backdrop-filter: blur(8px) saturate(140%);
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .nav-pill {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
 }
 .brand {
   display: flex;

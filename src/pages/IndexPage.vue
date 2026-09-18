@@ -222,34 +222,34 @@ const contacts = [
 .blob {
   position: absolute;
   border-radius: 50%;
-  filter: blur(90px);
+  filter: blur(60px);
 }
 .blob-a {
   top: -160px;
   left: -160px;
-  width: 560px;
-  height: 560px;
+  width: 460px;
+  height: 460px;
   background: var(--blob-1);
 }
 .blob-b {
   top: 220px;
   right: -200px;
-  width: 620px;
-  height: 620px;
+  width: 500px;
+  height: 500px;
   background: var(--blob-3);
 }
 .blob-c {
   top: 1400px;
   left: -180px;
-  width: 520px;
-  height: 520px;
+  width: 420px;
+  height: 420px;
   background: var(--blob-2);
 }
 .blob-d {
   top: 2600px;
   right: -160px;
-  width: 560px;
-  height: 560px;
+  width: 460px;
+  height: 460px;
   background: var(--blob-1);
 }
 
@@ -280,34 +280,35 @@ const contacts = [
   margin-bottom: 20px;
 }
 .badge .dot {
+  position: relative;
   width: 7px;
   height: 7px;
   border-radius: 50%;
   background: #4cc38a;
   margin-right: 9px;
+}
+.badge .dot::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: #4cc38a;
   animation: badge-pulse 1.8s ease-out infinite;
 }
 @keyframes badge-pulse {
   0% {
-    box-shadow: 0 0 0 0 rgba(76, 195, 138, 0.6);
     transform: scale(1);
-  }
-  60% {
-    transform: scale(1.2);
-  }
-  70% {
-    box-shadow: 0 0 0 8px rgba(76, 195, 138, 0);
-    transform: scale(1);
+    opacity: 0.6;
   }
   100% {
-    box-shadow: 0 0 0 0 rgba(76, 195, 138, 0);
-    transform: scale(1);
+    transform: scale(2.6);
+    opacity: 0;
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  .badge .dot {
+  .badge .dot::after {
     animation: none;
-    box-shadow: 0 0 0 3px rgba(76, 195, 138, 0.35);
+    opacity: 0;
   }
 }
 .hero-name {
