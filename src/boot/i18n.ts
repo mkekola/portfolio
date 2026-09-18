@@ -294,6 +294,7 @@ const i18n = createI18n({
 });
 
 export default boot(({ app }) => {
+  document.documentElement.lang = i18n.global.locale.value;
   app.use(i18n);
 });
 

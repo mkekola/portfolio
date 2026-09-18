@@ -84,6 +84,13 @@ html {
   scroll-behavior: smooth;
 }
 
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--accent-solid);
+  outline-offset: 2px;
+}
+
 // Force a clean, high-contrast palette when printing, regardless of the
 // light/dark mode active on screen.
 @media print {

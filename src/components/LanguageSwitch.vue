@@ -25,6 +25,7 @@ const model = ref(locale.value);
 
 watch(model, (v) => {
   locale.value = v;
+  document.documentElement.lang = v;
   localStorage.setItem('locale', v);
 });
 </script>
