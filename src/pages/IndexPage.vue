@@ -506,6 +506,7 @@ const contacts = [
   display: flex;
   gap: 14px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .footer-text {
