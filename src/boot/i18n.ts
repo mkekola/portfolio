@@ -83,7 +83,7 @@ const messages = {
       treasurer: {
         role: 'Rahastonhoitaja',
         organization: 'Ylioppilaskamerat ry',
-        period: '2023 Tammikuu - Nykyhetki',
+        period: '2023 Tammikuu - 2025 Joulukuu',
         details: [
           'Yhdistyksen talouden hoitaminen',
           'Budjetointi ja raportointi',
@@ -93,7 +93,7 @@ const messages = {
       boardMember: {
         role: 'Hallituksen jäsen',
         organization: 'Ylioppilaskamerat ry',
-        period: '2023 Tammikuu - Nykyhetki',
+        period: '2023 Tammikuu - 2025 Joulukuu',
         details: [
           'Yhdistyksen toiminnan suunnittelu',
           'Tapahtumien järjestäminen',
@@ -218,7 +218,7 @@ const messages = {
       treasurer: {
         role: 'Treasurer',
         organization: 'Ylioppilaskamerat ry',
-        period: 'January 2023 - Present',
+        period: 'January 2023 - December 2025',
         details: [
           "Managing the association's finances",
           'Budgeting and Reporting',
@@ -228,7 +228,7 @@ const messages = {
       boardMember: {
         role: 'Board Member',
         organization: 'Ylioppilaskamerat ry',
-        period: 'January 2023 - Present',
+        period: 'January 2023 - December 2025',
         details: [
           'Planning the association’s activities',
           'Organizing Events',
