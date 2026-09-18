@@ -146,6 +146,8 @@
         © {{ new Date().getFullYear() }} {{ cv.name }}
       </footer>
     </div>
+
+    <ScrollToTop />
   </q-page>
 </template>
 
@@ -154,6 +156,7 @@ import { computed, reactive } from 'vue';
 import { useQuasar } from 'quasar';
 import SectionNav from 'src/components/SectionNav.vue';
 import PaperSection from 'src/components/PaperSection.vue';
+import ScrollToTop from 'src/components/ScrollToTop.vue';
 import { useI18n } from 'vue-i18n';
 const i18n = useI18n();
 const t: typeof i18n.t = i18n.t.bind(i18n);

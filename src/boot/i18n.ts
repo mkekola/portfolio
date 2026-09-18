@@ -3,6 +3,7 @@ import { createI18n } from 'vue-i18n';
 
 const messages = {
   fi: {
+    scrollTop: 'Takaisin ylös',
     nav: {
       about: 'Tietoa minusta',
       education: 'Koulutus',
@@ -139,6 +140,7 @@ const messages = {
     },
   },
   en: {
+    scrollTop: 'Back to top',
     nav: {
       about: 'About Me',
       education: 'Education',
