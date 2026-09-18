@@ -223,6 +223,17 @@ const contacts = [
   position: absolute;
   border-radius: 50%;
   filter: blur(60px);
+  transform: scale(1);
+}
+@media (min-width: 900px) {
+  .blob {
+    transform: scale(1.3);
+  }
+}
+@media (min-width: 1300px) {
+  .blob {
+    transform: scale(1.6);
+  }
 }
 .blob-a {
   top: -160px;

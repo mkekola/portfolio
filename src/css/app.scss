@@ -9,9 +9,9 @@
 
   // Glassmorphism theme tokens (light)
   --page-bg: oklch(97% 0.014 300);
-  --blob-1: oklch(74% 0.12 288 / 0.34);
-  --blob-2: oklch(78% 0.1 195 / 0.22);
-  --blob-3: oklch(75% 0.13 312 / 0.28);
+  --blob-1: oklch(72% 0.15 288 / 0.44);
+  --blob-2: oklch(74% 0.14 300 / 0.38);
+  --blob-3: oklch(72% 0.16 312 / 0.4);
   --card-bg: rgba(255, 255, 255, 0.68);
   --card-border: rgba(255, 255, 255, 0.75);
   --card-shadow: 0 10px 32px rgba(31, 41, 55, 0.1);
@@ -33,7 +33,7 @@
 body.body--dark {
   --page-bg: oklch(19% 0.025 295);
   --blob-1: oklch(54% 0.15 288 / 0.38);
-  --blob-2: oklch(58% 0.13 195 / 0.24);
+  --blob-2: oklch(56% 0.16 300 / 0.28);
   --blob-3: oklch(52% 0.17 312 / 0.34);
   --card-bg: rgba(255, 255, 255, 0.09);
   --card-border: rgba(255, 255, 255, 0.13);
