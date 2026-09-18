@@ -550,6 +550,9 @@ const contacts = [
   flex-wrap: wrap;
   justify-content: center;
 }
+.contact-row .q-icon {
+  color: var(--accent-solid);
+}
 
 .footer-text {
   color: var(--text-muted);
