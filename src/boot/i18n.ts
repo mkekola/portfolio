@@ -19,6 +19,14 @@ const messages = {
       skills: 'Taidot',
       contact: 'Yhteystiedot',
     },
+    hero: {
+      badge: 'Avoinna uusille mahdollisuuksille',
+      tagline: 'Suuntana frontend & UI',
+      subtitle:
+        'Tuore tietojenkäsittelytieteen kandidaatti Helsingin yliopistosta. Etsin ensisijaisesti kokopäivätyötä frontendin ja UI-suunnittelun parista.',
+      downloadCv: 'Lataa CV',
+      contactCta: 'Ota yhteyttä',
+    },
     about: {
       hello: 'Helou! Maria täällä 👋🏻',
       body: 'Valmistuin tietojenkäsittelytieteen kandidaatiksi Helsingin yliopistosta toukokuussa 2026. Etsin nyt ensisijaisesti kokopäivätyötä, joka haastaa ja kehittää "työelämä minääni". Maisterin tutkinto etenee taustalla työn ohessa, kun aikataulu sen sallii. Taustani verkko- ja palvelutehtävistä sekä asiakastyöstä on opettanut yhdistämään teknisen osaamisen ja ihmisten kuuntelemisen. Vapaa-ajalla tartun usein kameraan, retkeilyreppuun tai peliohjaimeen. Sama uteliaisuus sekä innostuneisuus vie minut uusille poluille ja uusien asioiden pariin myös töissä.',
@@ -153,6 +161,14 @@ const messages = {
       volunteer: 'Volunteer',
       skills: 'Skills',
       contact: 'Contact',
+    },
+    hero: {
+      badge: 'Open to new opportunities',
+      tagline: 'Heading toward frontend & UI',
+      subtitle:
+        "Fresh Computer Science graduate from the University of Helsinki. I'm primarily looking for full-time work in frontend and UI design.",
+      downloadCv: 'Download CV',
+      contactCta: 'Get in touch',
     },
     about: {
       hello: "Hey! Maria here 👋🏻",
