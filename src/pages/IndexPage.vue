@@ -37,7 +37,7 @@
       </section>
 
       <PaperSection id="about" index="01" :title="$t('section.about')">
-        <div class="row q-col-gutter-xl items-start">
+        <div class="row q-col-gutter-lg items-start">
           <div class="col-12 col-md-7">
             <div class="text-h5 text-weight-bold about-hello">
               {{ $t('about.hello') }}
