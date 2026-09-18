@@ -66,6 +66,19 @@ defineProps<{
   -webkit-backdrop-filter: blur(20px) saturate(160%);
 }
 
+@media (max-width: 480px) {
+  .paper-wrap {
+    padding: 16px 12px;
+  }
+  .paper-card {
+    padding: 20px;
+    border-radius: 18px;
+  }
+  .section-title {
+    font-size: 21px;
+  }
+}
+
 @media print {
   .paper-wrap {
     padding: 0;

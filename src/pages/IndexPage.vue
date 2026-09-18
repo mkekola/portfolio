@@ -80,7 +80,7 @@
       </PaperSection>
 
       <PaperSection id="experience" index="03" :title="$t('section.experience')">
-        <q-timeline color="accent" layout="comfortable" side="right" dense class="glass-timeline">
+        <q-timeline color="accent" :layout="timelineLayout" side="right" class="glass-timeline">
           <q-timeline-entry
             v-for="k in experience"
             :key="k"
@@ -98,7 +98,7 @@
       </PaperSection>
 
       <PaperSection id="volunteer" index="04" :title="$t('section.volunteer')">
-        <q-timeline color="accent" layout="comfortable" side="right" dense class="glass-timeline">
+        <q-timeline color="accent" :layout="timelineLayout" side="right" class="glass-timeline">
           <q-timeline-entry
             v-for="k in volunteer"
             :key="k"
@@ -155,13 +155,16 @@
 </template>
 
 <script setup lang="ts">
-import { reactive } from 'vue';
+import { computed, reactive } from 'vue';
+import { useQuasar } from 'quasar';
 import SectionNav from 'src/components/SectionNav.vue';
 import PaperSection from 'src/components/PaperSection.vue';
 import { useI18n } from 'vue-i18n';
 const i18n = useI18n();
 const t: typeof i18n.t = i18n.t.bind(i18n);
 const tm: typeof i18n.tm = i18n.tm.bind(i18n);
+const $q = useQuasar();
+const timelineLayout = computed(() => ($q.screen.lt.sm ? 'dense' : 'comfortable'));
 
 const cv = reactive({ name: 'Maria Kekola' });
 function breakLabel(s: string) {
@@ -486,8 +489,10 @@ const contacts = [
   padding: 12px 14px;
   height: 100%;
 }
-.skill-tile--wide {
-  grid-column: span 2;
+@media (min-width: 600px) {
+  .skill-tile--wide {
+    grid-column: span 2;
+  }
 }
 .skill-tile-icon {
   color: var(--accent-solid);
@@ -518,6 +523,12 @@ const contacts = [
 
 .glass-timeline {
   border-spacing: 0 18px;
+}
+.glass-timeline :deep(.q-timeline__entry) {
+  margin-bottom: 18px;
+}
+.glass-timeline :deep(.q-timeline__entry:last-child) {
+  margin-bottom: 0;
 }
 .glass-timeline :deep(.q-timeline__content) {
   background: var(--card-bg);
@@ -565,11 +576,30 @@ const contacts = [
     aspect-ratio: 16 / 10;
     order: -1;
   }
+  .hero-photo img {
+    object-position: center 25%;
+  }
 }
 
 @media (max-width: 480px) {
   .hobbies-grid {
     grid-template-columns: repeat(3, 1fr);
+  }
+  .hero {
+    padding: 32px 16px 28px;
+  }
+  .hero-name {
+    font-size: 36px;
+  }
+  .hero-tagline {
+    font-size: 19px;
+  }
+  .hero-cta {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .btn {
+    justify-content: center;
   }
 }
 </style>
