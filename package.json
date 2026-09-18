@@ -1,8 +1,8 @@
 {
   "name": "portfolio",
   "version": "0.0.1",
-  "description": "Personal CV website",
-  "productName": "CV",
+  "description": "Fresh Computer Science graduate from the University of Helsinki, looking for full-time frontend and UI work.",
+  "productName": "Maria Kekola — Frontend & UI Developer CV",
   "author": "Maria Kekola <maria.kekola@helsinki.fi>",
   "type": "module",
   "private": true,
