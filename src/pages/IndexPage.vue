@@ -116,12 +116,7 @@
 
       <PaperSection id="skills" index="05" :title="$t('section.skills')">
         <div class="skill-tile-grid">
-          <div
-            v-for="s in skills"
-            :key="s.key"
-            class="skill-tile"
-            :class="{ 'skill-tile--wide': s.key === 'soft' }"
-          >
+          <div v-for="s in skills" :key="s.key" class="skill-tile">
             <q-icon :name="s.icon" size="18px" class="skill-tile-icon" />
             <div>
               <div class="skill-label">{{ t(`skills.items.${s.key}.label`) }}</div>
@@ -195,6 +190,7 @@ const skills = [
   { icon: 'fa-brands fa-git', key: 'git' },
   { icon: 'fa-brands fa-docker', key: 'docker' },
   { icon: 'fa-solid fa-code', key: 'web' },
+  { icon: 'fa-brands fa-figma', key: 'design' },
   { icon: 'fa-brands fa-linux', key: 'os' },
   { icon: 'fa-solid fa-file-word', key: 'office' },
   { icon: 'fa-solid fa-camera', key: 'photo' },
@@ -488,11 +484,6 @@ const contacts = [
   border-radius: 14px;
   padding: 12px 14px;
   height: 100%;
-}
-@media (min-width: 600px) {
-  .skill-tile--wide {
-    grid-column: span 2;
-  }
 }
 .skill-tile-icon {
   color: var(--accent-solid);
