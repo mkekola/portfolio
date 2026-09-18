@@ -186,7 +186,6 @@ function downloadCv() {
 const hobbies = [
   { icon: 'fa-solid fa-camera', key: 'photo' },
   { icon: 'fa-solid fa-gamepad', key: 'games' },
-  { icon: 'fa-solid fa-paint-brush', key: 'art' },
   { icon: 'fa-solid fa-plane-departure', key: 'travel' },
   { icon: 'fa-solid fa-utensils', key: 'cooking' },
   { icon: 'fa-solid fa-person-running', key: 'climbing' },
