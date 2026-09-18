@@ -39,26 +39,26 @@ type BrandKey = (typeof BRAND_KEYS)[number];
 type Palette = Record<BrandKey, string>;
 
 const brandLight: Palette = {
-  primary: '#706D54',
-  secondary: '#130D0D',
-  accent: '#3C3D37',
+  primary: '#6D4FD1',
+  secondary: '#3FA7A0',
+  accent: '#9A3FC4',
   nav: '#FFFFFF',
-  info: '#706D54',
+  info: '#6D4FD1',
   warning: '#F2C166',
-  positive: '#7AC48A',
+  positive: '#4CC38A',
   negative: '#C85A54',
-  dark: '#130D0D',
+  dark: '#231C33',
 };
 const brandDark: Palette = {
-  primary: '#3C3D37',
-  secondary: '#b9bbbd',
-  accent: '#706D54',
-  nav: '#3C3D37',
-  info: '#21498A',
-  warning: '#A87A2A',
-  positive: '#22946E',
+  primary: '#9A86E8',
+  secondary: '#5FC9C1',
+  accent: '#C48AE0',
+  nav: '#1C1826',
+  info: '#7C6AE0',
+  warning: '#E0B15E',
+  positive: '#4CC38A',
   negative: '#F07B73',
-  dark: '#0B1016',
+  dark: '#0F0B16',
 };
 
 const STORAGE_KEY = 'theme';

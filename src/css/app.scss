@@ -5,6 +5,48 @@
     Arial, 'Noto Sans';
   --font-body:
     'Source Sans 3', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, 'Noto Sans';
+
+  // Glassmorphism theme tokens (light)
+  --page-bg: oklch(97% 0.014 300);
+  --blob-1: oklch(74% 0.12 288 / 0.34);
+  --blob-2: oklch(78% 0.1 195 / 0.22);
+  --blob-3: oklch(75% 0.13 312 / 0.28);
+  --card-bg: rgba(255, 255, 255, 0.58);
+  --card-border: rgba(255, 255, 255, 0.75);
+  --card-shadow: 0 10px 32px rgba(31, 41, 55, 0.1);
+  --nav-bg: rgba(255, 255, 255, 0.62);
+  --nav-border: rgba(255, 255, 255, 0.75);
+  --text-heading: oklch(28% 0.035 292);
+  --text-body: oklch(38% 0.022 292);
+  --text-muted: oklch(53% 0.022 292);
+  --chip-bg: rgba(255, 255, 255, 0.55);
+  --chip-border: rgba(255, 255, 255, 0.8);
+  --divider: rgba(31, 41, 55, 0.1);
+  --accent-solid: oklch(52% 0.17 295);
+  --accent-gradient: linear-gradient(135deg, oklch(60% 0.16 288) 0%, oklch(58% 0.19 322) 100%);
+  --button-shadow: 0 10px 26px rgba(88, 60, 220, 0.22);
+  --hero-overlay: linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.18) 100%);
+}
+
+body.body--dark {
+  --page-bg: oklch(19% 0.025 295);
+  --blob-1: oklch(54% 0.15 288 / 0.38);
+  --blob-2: oklch(58% 0.13 195 / 0.24);
+  --blob-3: oklch(52% 0.17 312 / 0.34);
+  --card-bg: rgba(255, 255, 255, 0.055);
+  --card-border: rgba(255, 255, 255, 0.13);
+  --card-shadow: 0 12px 36px rgba(0, 0, 0, 0.45);
+  --nav-bg: rgba(24, 26, 34, 0.6);
+  --nav-border: rgba(255, 255, 255, 0.12);
+  --text-heading: oklch(97% 0.01 292);
+  --text-body: oklch(85% 0.015 292);
+  --text-muted: oklch(66% 0.02 292);
+  --chip-bg: rgba(255, 255, 255, 0.075);
+  --chip-border: rgba(255, 255, 255, 0.14);
+  --divider: rgba(255, 255, 255, 0.12);
+  --accent-solid: oklch(76% 0.13 295);
+  --button-shadow: 0 10px 28px rgba(100, 90, 255, 0.35);
+  --hero-overlay: linear-gradient(180deg, rgba(10, 12, 20, 0.05) 0%, rgba(10, 12, 20, 0.55) 100%);
 }
 
 body {
@@ -12,11 +54,9 @@ body {
   font-size: 16px;
   line-height: 1.6;
   text-rendering: optimizeLegibility;
-  background: #e2e3e6;
-}
-
-body.q-dark {
-  background: #19191a;
+  background: var(--page-bg);
+  color: var(--text-body);
+  overflow-x: hidden;
 }
 
 .body-scroll .q-page-container {
@@ -36,13 +76,6 @@ h4,
   font-family: var(--font-heading);
   font-weight: 700;
   letter-spacing: 0.02em;
-}
-
-.hero .text-h2 {
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  text-shadow: 10px 2px 25px rgba(233, 228, 228, 0.589);
 }
 
 html {
