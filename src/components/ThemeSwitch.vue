@@ -3,11 +3,8 @@
     v-model="mode"
     :options="opts"
     size="sm"
-    push
     rounded
-    unelevated
-    color="accent"
-    text-color="dark"
+    flat
     :ripple="false"
     aria-label="Toggle theme"
     class="theme-toggle"
@@ -20,8 +17,8 @@ import { onMounted, ref, watch } from 'vue';
 
 type Mode = 'light' | 'dark';
 const opts = [
-  { label: '☀️', value: 'light' as Mode },
-  { label: '🌑', value: 'dark' as Mode },
+  { icon: 'fa-solid fa-sun', value: 'light' as Mode },
+  { icon: 'fa-solid fa-moon', value: 'dark' as Mode },
 ];
 
 const BRAND_KEYS = [
@@ -92,7 +89,28 @@ watch(mode, (m) => apply(m));
 </script>
 
 <style scoped>
+.theme-toggle {
+  background: var(--chip-bg);
+  border: 1px solid var(--chip-border);
+  border-radius: 999px;
+  padding: 3px;
+}
 .theme-toggle :deep(.q-btn) {
+  min-height: 26px;
+  min-width: 34px;
   padding: 0 10px;
+  border-radius: 999px;
+  color: var(--text-muted);
+}
+.theme-toggle :deep(.q-btn .q-icon) {
+  color: inherit;
+}
+.theme-toggle :deep(.q-btn[aria-pressed='true']) {
+  background: var(--toggle-active-bg);
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+.theme-toggle :deep(.q-btn[aria-pressed='true'] .q-icon) {
+  color: #fff;
 }
 </style>
