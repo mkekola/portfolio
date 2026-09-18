@@ -88,20 +88,13 @@ const messages = {
     },
     volunteer: {
       treasurer: {
-        role: 'Rahastonhoitaja',
+        role: 'Rahastonhoitaja, hallituksen jäsen',
         organization: 'Ylioppilaskamerat ry',
         period: '2023 Tammikuu - 2025 Joulukuu',
         details: [
           'Yhdistyksen talouden hoitaminen',
           'Budjetointi ja raportointi',
           'Tilinpäätösen laatiminen',
-        ],
-      },
-      boardMember: {
-        role: 'Hallituksen jäsen',
-        organization: 'Ylioppilaskamerat ry',
-        period: '2023 Tammikuu - 2025 Joulukuu',
-        details: [
           'Yhdistyksen toiminnan suunnittelu',
           'Tapahtumien järjestäminen',
           'Viestintä ja markkinointi',
@@ -230,20 +223,13 @@ const messages = {
     },
     volunteer: {
       treasurer: {
-        role: 'Treasurer',
+        role: 'Treasurer and Board Member',
         organization: 'Ylioppilaskamerat ry',
         period: 'January 2023 - December 2025',
         details: [
           "Managing the association's finances",
           'Budgeting and Reporting',
           'Preparing Financial Statements',
-        ],
-      },
-      boardMember: {
-        role: 'Board Member',
-        organization: 'Ylioppilaskamerat ry',
-        period: 'January 2023 - December 2025',
-        details: [
           'Planning the association’s activities',
           'Organizing Events',
           'Communication and Marketing',

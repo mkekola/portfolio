@@ -114,28 +114,17 @@
       </PaperSection>
 
       <PaperSection id="skills" index="05" :title="$t('section.skills')">
-        <div class="row q-col-gutter-lg">
-          <div class="col-12 col-md-6">
-            <div class="skill-tile-grid">
-              <div v-for="s in skillsLeft" :key="s.key" class="skill-tile">
-                <q-icon :name="s.icon" size="18px" class="skill-tile-icon" />
-                <div>
-                  <div class="skill-label">{{ t(`skills.items.${s.key}.label`) }}</div>
-                  <div class="skill-note">{{ t(`skills.items.${s.key}.note`) }}</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 col-md-6">
-            <div class="skill-tile-grid">
-              <div v-for="s in skillsRight" :key="s.key" class="skill-tile">
-                <q-icon :name="s.icon" size="18px" class="skill-tile-icon" />
-                <div>
-                  <div class="skill-label">{{ t(`skills.items.${s.key}.label`) }}</div>
-                  <div class="skill-note">{{ t(`skills.items.${s.key}.note`) }}</div>
-                </div>
-              </div>
+        <div class="skill-tile-grid">
+          <div
+            v-for="s in skills"
+            :key="s.key"
+            class="skill-tile"
+            :class="{ 'skill-tile--wide': s.key === 'soft' }"
+          >
+            <q-icon :name="s.icon" size="18px" class="skill-tile-icon" />
+            <div>
+              <div class="skill-label">{{ t(`skills.items.${s.key}.label`) }}</div>
+              <div class="skill-note">{{ t(`skills.items.${s.key}.note`) }}</div>
             </div>
           </div>
         </div>
@@ -193,30 +182,19 @@ const hobbies = [
 ];
 const education = ['msc', 'bsc'];
 const experience = ['finavia', 'csfm', 'csfc'];
-const volunteer = ['treasurer', 'boardMember', 'officer'];
-const skillsLeft = [
+const volunteer = ['treasurer', 'officer'];
+const skills = [
   { icon: 'fa-brands fa-python', key: 'python' },
   { icon: 'fa-solid fa-database', key: 'sql' },
   { icon: 'fa-brands fa-js', key: 'js' },
   { icon: 'fa-brands fa-git', key: 'git' },
   { icon: 'fa-brands fa-docker', key: 'docker' },
   { icon: 'fa-solid fa-code', key: 'web' },
-];
-const skillsRight = [
   { icon: 'fa-brands fa-linux', key: 'os' },
-  {
-    icon: 'fa-solid fa-file-word',
-    key: 'office',
-  },
+  { icon: 'fa-solid fa-file-word', key: 'office' },
   { icon: 'fa-solid fa-camera', key: 'photo' },
-  {
-    icon: 'fa-solid fa-language',
-    key: 'lang',
-  },
-  {
-    icon: 'fa-solid fa-user-friends',
-    key: 'soft',
-  },
+  { icon: 'fa-solid fa-language', key: 'lang' },
+  { icon: 'fa-solid fa-user-friends', key: 'soft' },
 ];
 const contacts = [
   { icon: 'fa-solid fa-envelope', label: 'Gmail', href: 'mailto:maria.kekola@gmail.com' },
@@ -492,11 +470,9 @@ const contacts = [
 
 .skill-tile-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 12px;
-}
-.skill-tile-grid > .skill-tile:last-child:nth-child(odd) {
-  grid-column: 1 / -1;
+  align-items: stretch;
 }
 .skill-tile {
   display: flex;
@@ -506,6 +482,10 @@ const contacts = [
   border: 1px solid var(--chip-border);
   border-radius: 14px;
   padding: 12px 14px;
+  height: 100%;
+}
+.skill-tile--wide {
+  grid-column: span 2;
 }
 .skill-tile-icon {
   color: var(--accent-solid);
