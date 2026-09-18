@@ -534,6 +534,9 @@ const contacts = [
   font-size: 13px;
 }
 
+.glass-timeline {
+  border-spacing: 0 18px;
+}
 .glass-timeline :deep(.q-timeline__content) {
   background: var(--card-bg);
   border: 1px solid var(--card-border);
