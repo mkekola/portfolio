@@ -496,6 +496,9 @@ const contacts = [
   grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
   gap: 12px;
 }
+.skill-tile-grid > .skill-tile:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+}
 .skill-tile {
   display: flex;
   align-items: center;
