@@ -16,7 +16,15 @@
       </nav>
 
       <div class="right">
-        <q-btn class="menu-btn" flat round dense icon="menu" :ripple="false" aria-label="Menu">
+        <q-btn
+          class="menu-btn"
+          flat
+          round
+          dense
+          icon="fa-solid fa-bars"
+          :ripple="false"
+          aria-label="Menu"
+        >
           <q-menu anchor="bottom right" self="top right">
             <q-list style="min-width: 160px">
               <q-item clickable v-close-popup @click="to('#about')">
