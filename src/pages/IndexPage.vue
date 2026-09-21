@@ -79,38 +79,52 @@
       </PaperSection>
 
       <PaperSection id="experience" index="03" :title="$t('section.experience')">
-        <q-timeline color="accent" :layout="timelineLayout" side="right" class="glass-timeline">
-          <q-timeline-entry
+        <ul class="glass-timeline">
+          <li
             v-for="k in experience"
             :key="k"
-            :class="{ 'timeline-entry--active': k === currentExperienceKey }"
-            :title="`${t(`experience.${k}.role`)} — ${t(`experience.${k}.company`)}`"
-            :subtitle="t(`experience.${k}.period`)"
+            class="timeline-item"
+            :class="{ 'timeline-item--active': k === currentExperienceKey }"
           >
-            <div class="pill-row q-mt-sm">
-              <span v-for="(b, i) in tm(`experience.${k}.details`) as string[]" :key="i" class="tag">{{
-                b
-              }}</span>
+            <div class="timeline-period">{{ t(`experience.${k}.period`) }}</div>
+            <div class="timeline-marker">
+              <span class="timeline-dot"></span>
+              <span class="timeline-line"></span>
             </div>
-          </q-timeline-entry>
-        </q-timeline>
+            <div class="timeline-body">
+              <h3 class="timeline-title">
+                {{ t(`experience.${k}.role`) }} — {{ t(`experience.${k}.company`) }}
+              </h3>
+              <div class="pill-row q-mt-sm">
+                <span v-for="(b, i) in tm(`experience.${k}.details`) as string[]" :key="i" class="tag">{{
+                  b
+                }}</span>
+              </div>
+            </div>
+          </li>
+        </ul>
       </PaperSection>
 
       <PaperSection id="volunteer" index="04" :title="$t('section.volunteer')">
-        <q-timeline color="accent" :layout="timelineLayout" side="right" class="glass-timeline">
-          <q-timeline-entry
-            v-for="k in volunteer"
-            :key="k"
-            :title="`${t(`volunteer.${k}.role`)} — ${t(`volunteer.${k}.organization`)}`"
-            :subtitle="t(`volunteer.${k}.period`)"
-          >
-            <div class="pill-row q-mt-sm">
-              <span v-for="(b, i) in tm(`volunteer.${k}.details`) as string[]" :key="i" class="tag">{{
-                b
-              }}</span>
+        <ul class="glass-timeline">
+          <li v-for="k in volunteer" :key="k" class="timeline-item">
+            <div class="timeline-period">{{ t(`volunteer.${k}.period`) }}</div>
+            <div class="timeline-marker">
+              <span class="timeline-dot"></span>
+              <span class="timeline-line"></span>
             </div>
-          </q-timeline-entry>
-        </q-timeline>
+            <div class="timeline-body">
+              <h3 class="timeline-title">
+                {{ t(`volunteer.${k}.role`) }} — {{ t(`volunteer.${k}.organization`) }}
+              </h3>
+              <div class="pill-row q-mt-sm">
+                <span v-for="(b, i) in tm(`volunteer.${k}.details`) as string[]" :key="i" class="tag">{{
+                  b
+                }}</span>
+              </div>
+            </div>
+          </li>
+        </ul>
       </PaperSection>
 
       <PaperSection id="skills" index="05" :title="$t('section.skills')">
@@ -151,8 +165,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, reactive } from 'vue';
-import { useQuasar } from 'quasar';
+import { reactive } from 'vue';
 import SectionNav from 'src/components/SectionNav.vue';
 import PaperSection from 'src/components/PaperSection.vue';
 import ScrollToTop from 'src/components/ScrollToTop.vue';
@@ -161,8 +174,6 @@ import { useI18n } from 'vue-i18n';
 const i18n = useI18n();
 const t: typeof i18n.t = i18n.t.bind(i18n);
 const tm: typeof i18n.tm = i18n.tm.bind(i18n);
-const $q = useQuasar();
-const timelineLayout = computed(() => ($q.screen.lt.sm ? 'dense' : 'comfortable'));
 
 const cv = reactive({ name: 'Maria Kekola' });
 function breakLabel(s: string) {
@@ -464,32 +475,72 @@ const contacts = [
 }
 
 .glass-timeline {
-  border-spacing: 0 18px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
-.glass-timeline :deep(.q-timeline__entry) {
+.timeline-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 240px 24px 1fr;
+  grid-template-areas: 'period marker body';
+  column-gap: 20px;
   margin-bottom: 18px;
 }
-.glass-timeline :deep(.q-timeline__entry:last-child) {
+.timeline-item:last-child {
   margin-bottom: 0;
 }
-.glass-timeline :deep(.q-timeline__content) {
+.timeline-period {
+  grid-area: period;
+  min-width: 0;
+  text-align: right;
+  padding-top: 24px;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--text-muted);
+}
+.timeline-marker {
+  grid-area: marker;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.timeline-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--accent-gradient);
+  margin-top: 26px;
+  flex-shrink: 0;
+}
+.timeline-line {
+  flex: 1;
+  width: 2px;
+  background: var(--divider);
+  margin-top: 4px;
+}
+.timeline-item:last-child .timeline-line {
+  display: none;
+}
+.timeline-body {
+  grid-area: body;
+  min-width: 0;
   background: var(--card-bg);
   border: 1px solid var(--card-border);
   border-radius: 18px;
   padding: 18px 22px 20px;
   box-shadow: var(--card-shadow);
 }
-.glass-timeline :deep(.q-timeline__title) {
+.timeline-title {
   color: var(--text-heading);
   font-weight: 700;
   font-size: 16px;
+  margin: 0;
 }
-.glass-timeline :deep(.q-timeline__subtitle) {
-  color: var(--text-muted);
-  font-weight: 600;
-  opacity: 1;
-}
-.glass-timeline :deep(.timeline-entry--active .q-timeline__dot::before) {
+.timeline-item--active .timeline-dot {
   animation: timeline-pulse 1.8s ease-out infinite;
 }
 @keyframes timeline-pulse {
@@ -510,9 +561,24 @@ const contacts = [
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  .glass-timeline :deep(.timeline-entry--active .q-timeline__dot::before) {
+  .timeline-item--active .timeline-dot {
     animation: none;
     box-shadow: 0 0 0 5px oklch(45% 0.19 300 / 0.35);
+  }
+}
+
+@media (max-width: 680px) {
+  .timeline-item {
+    grid-template-columns: 24px 1fr;
+    grid-template-areas:
+      'marker period'
+      'marker body';
+    row-gap: 6px;
+  }
+  .timeline-period {
+    text-align: left;
+    padding-top: 4px;
+    white-space: normal;
   }
 }
 
@@ -582,7 +648,7 @@ const contacts = [
   .info-card,
   .hobbies-card,
   .skill-tile,
-  .glass-timeline :deep(.q-timeline__entry) {
+  .timeline-item {
     break-inside: avoid;
   }
 }

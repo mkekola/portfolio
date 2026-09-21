@@ -6,6 +6,7 @@
     rounded
     flat
     :ripple="false"
+    role="group"
     aria-label="Toggle theme"
     class="theme-toggle"
   />
@@ -17,8 +18,8 @@ import { onMounted, ref, watch } from 'vue';
 
 type Mode = 'light' | 'dark';
 const opts = [
-  { icon: 'fa-solid fa-sun', value: 'light' as Mode },
-  { icon: 'fa-solid fa-moon', value: 'dark' as Mode },
+  { icon: 'fa-solid fa-sun', value: 'light' as Mode, attrs: { 'aria-label': 'Light mode' } },
+  { icon: 'fa-solid fa-moon', value: 'dark' as Mode, attrs: { 'aria-label': 'Dark mode' } },
 ];
 
 const BRAND_KEYS = [

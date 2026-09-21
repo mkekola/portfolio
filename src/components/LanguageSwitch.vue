@@ -7,6 +7,7 @@
     flat
     no-caps
     :ripple="false"
+    role="group"
     aria-label="Change language"
     class="lang-toggle"
   />

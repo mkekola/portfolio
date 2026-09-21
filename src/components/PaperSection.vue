@@ -3,7 +3,7 @@
     <div class="paper-inner">
       <div v-if="title" class="section-head">
         <span v-if="index" class="section-idx">{{ index }}</span>
-        <div class="section-title">{{ title }}</div>
+        <h2 class="section-title">{{ title }}</h2>
         <div class="section-line"></div>
       </div>
       <div class="paper-card">
@@ -50,6 +50,7 @@ defineProps<{
   font-weight: 800;
   font-size: 26px;
   color: var(--text-heading);
+  margin: 0;
 }
 .section-line {
   flex: 1;
