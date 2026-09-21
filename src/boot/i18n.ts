@@ -26,6 +26,7 @@ const messages = {
       subtitle:
         'Tuore tietojenkäsittelytieteen kandidaatti Helsingin yliopistosta. Etsin ensisijaisesti kokopäivätyötä frontendin ja UI-suunnittelun parista.',
       downloadCv: 'Lataa CV',
+      portfolioCta: 'Katso portfolio',
       contactCta: 'Ota yhteyttä',
     },
     about: {
@@ -138,6 +139,25 @@ const messages = {
     contact: {
       title: 'Yhteystiedot',
     },
+    portfolio: {
+      back: 'Takaisin etusivulle',
+      title: 'Portfolio',
+      subtitle:
+        'Muutama projekti, joissa pääsen kehittämään frontend- ja UI-osaamistani. Samalla opettelen hyödyntämään tekoälytyökaluja, kuten Claude Codea, osana omaa työskentelyäni.',
+      viewLive: 'Kokeile',
+      projects: {
+        forkcast: {
+          title: 'Forkcast',
+          description:
+            'Viikkosuunnitteluun tarkoitettu resepti- ja ateriasuunnittelusovellus. Hae reseptejä, suunnittele viikon ateriat ja muodosta ostoslista automaattisesti suunniteltujen reseptien aineksista.',
+        },
+        cv: {
+          title: 'Tämä CV-sivusto',
+          description:
+            'Oma verkkosivuni: glassmorphism-tyylinen, täysin responsiivinen ja saavutettava CV, jota olen suunnitellut ja kehittänyt Vue/Quasar-pohjalla, mukaan lukien tumma/vaalea teema ja tulostettava versio.',
+        },
+      },
+    },
   },
   en: {
     scrollTop: 'Back to top',
@@ -163,6 +183,7 @@ const messages = {
       subtitle:
         "Fresh Computer Science graduate from the University of Helsinki. I'm primarily looking for full-time work in frontend and UI design.",
       downloadCv: 'Download CV',
+      portfolioCta: 'View portfolio',
       contactCta: 'Get in touch',
     },
     about: {
@@ -274,6 +295,25 @@ const messages = {
     },
     contact: {
       title: 'Contact',
+    },
+    portfolio: {
+      back: 'Back to home',
+      title: 'Portfolio',
+      subtitle:
+        "A few projects where I get to grow my frontend and UI skills. Along the way, I'm also learning to make the most of AI tools like Claude Code as part of how I work.",
+      viewLive: 'View live',
+      projects: {
+        forkcast: {
+          title: 'Forkcast',
+          description:
+            "A recipe and meal-planning app for the week ahead. Search recipes, plan meals for the week, and automatically generate a shopping list from the planned recipes' ingredients.",
+        },
+        cv: {
+          title: 'This CV site',
+          description:
+            'My own site: a glassmorphism-styled, fully responsive and accessible CV that I designed and built on Vue/Quasar, including a light/dark theme and a printable version.',
+        },
+      },
     },
   },
 };

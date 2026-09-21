@@ -1,11 +1,6 @@
 <template>
   <q-page>
-    <div class="bg-blobs" aria-hidden="true">
-      <div class="blob blob-a"></div>
-      <div class="blob blob-b"></div>
-      <div class="blob blob-c"></div>
-      <div class="blob blob-d"></div>
-    </div>
+    <BackgroundBlobs />
 
     <div class="page-inner">
       <SectionNav />
@@ -24,6 +19,10 @@
               <q-icon name="fa-solid fa-download" size="16px" />
               {{ $t('hero.downloadCv') }}
             </button>
+            <router-link to="/portfolio" class="btn btn-secondary">
+              <q-icon name="fa-solid fa-diagram-project" size="16px" />
+              {{ $t('hero.portfolioCta') }}
+            </router-link>
             <button class="btn btn-secondary" @click="to('#contact')">
               {{ $t('hero.contactCta') }}
               <q-icon name="fa-solid fa-arrow-right" size="16px" />
@@ -157,6 +156,7 @@ import { useQuasar } from 'quasar';
 import SectionNav from 'src/components/SectionNav.vue';
 import PaperSection from 'src/components/PaperSection.vue';
 import ScrollToTop from 'src/components/ScrollToTop.vue';
+import BackgroundBlobs from 'src/components/BackgroundBlobs.vue';
 import { useI18n } from 'vue-i18n';
 const i18n = useI18n();
 const t: typeof i18n.t = i18n.t.bind(i18n);
@@ -215,63 +215,6 @@ const contacts = [
 .q-page {
   position: relative;
 }
-.bg-blobs {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-  pointer-events: none;
-  z-index: 0;
-}
-.blob {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(60px);
-  transform: scale(1);
-}
-@media (min-width: 900px) {
-  .blob {
-    transform: scale(1.3);
-  }
-}
-@media (min-width: 1300px) {
-  .blob {
-    transform: scale(1.6);
-  }
-}
-@media (min-width: 1800px) {
-  .blob {
-    transform: scale(2.1);
-  }
-}
-.blob-a {
-  top: -160px;
-  left: -160px;
-  width: 460px;
-  height: 460px;
-  background: var(--blob-1);
-}
-.blob-b {
-  top: 220px;
-  right: -200px;
-  width: 500px;
-  height: 500px;
-  background: var(--blob-3);
-}
-.blob-c {
-  top: 1400px;
-  left: -180px;
-  width: 420px;
-  height: 420px;
-  background: var(--blob-2);
-}
-.blob-d {
-  top: 2600px;
-  right: -160px;
-  width: 460px;
-  height: 460px;
-  background: var(--blob-1);
-}
-
 .page-inner {
   position: relative;
   z-index: 1;
@@ -359,29 +302,6 @@ const contacts = [
   display: flex;
   gap: 14px;
   flex-wrap: wrap;
-}
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 13px 24px;
-  border-radius: 999px;
-  font-weight: 700;
-  font-size: 14.5px;
-  font-family: var(--font-body);
-  border: none;
-  cursor: pointer;
-  text-decoration: none;
-}
-.btn-primary {
-  background: var(--accent-gradient);
-  color: #fff;
-  box-shadow: var(--button-shadow);
-}
-.btn-secondary {
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  color: var(--text-heading);
 }
 .hero-photo {
   border-radius: 26px;
@@ -495,22 +415,6 @@ const contacts = [
   font-size: 12.5px;
   font-weight: 600;
   color: var(--text-muted);
-}
-
-.pill-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-.tag {
-  display: inline-flex;
-  padding: 5px 12px;
-  border-radius: 999px;
-  font-size: 12.5px;
-  font-weight: 600;
-  background: var(--chip-bg);
-  border: 1px solid var(--chip-border);
-  color: var(--text-body);
 }
 
 .skill-tile-grid {
@@ -648,9 +552,6 @@ const contacts = [
 }
 
 @media print {
-  .bg-blobs {
-    display: none;
-  }
   .badge,
   .hero-cta,
   .hero-photo {
