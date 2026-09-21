@@ -4,9 +4,7 @@ export default defineConfig((/* ctx */) => {
   return {
     boot: ['i18n'],
 
-    css: ['app.scss'],
-
-    extras: ['fontawesome-v6'],
+    css: ['app.scss', 'fontawesome/fontawesome-subset.css'],
 
     build: {
       target: {
