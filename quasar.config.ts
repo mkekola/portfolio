@@ -17,7 +17,7 @@ export default defineConfig((/* ctx */) => {
         vueShim: true,
       },
 
-      vueRouterMode: 'hash',
+      vueRouterMode: 'history',
 
       vitePlugins: [
         [
