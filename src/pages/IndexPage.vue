@@ -30,7 +30,7 @@
           </div>
         </div>
         <div class="hero-photo">
-          <img src="/hero.jpg" :alt="cv.name" />
+          <img src="/hero.jpg" :alt="cv.name" fetchpriority="high" />
           <div class="hero-photo-overlay"></div>
         </div>
       </section>
