@@ -1,4 +1,4 @@
-# Maria Kekola — CV & Portfolio
+# Maria Kekola — CV & Portfolio 😸
 
 Personal CV and portfolio site, built with Quasar (Vue 3) and TypeScript.
 
