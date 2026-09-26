@@ -151,6 +151,11 @@ const messages = {
           description:
             'Viikkosuunnitteluun tarkoitettu resepti- ja ateriasuunnittelusovellus. Hae reseptejä, suunnittele viikon ateriat ja muodosta ostoslista automaattisesti suunniteltujen reseptien aineksista.',
         },
+        kulkuri: {
+          title: 'Kulkuri',
+          description:
+            'Reaaliaikainen HSL-liikennekartta pääkaupunkiseudulle. Bussit, raitiovaunut, metrot, junat ja lautat liikkuvat kartalla pehmeästi animoituna aikataulujen sijaan, ja pysäkin seuraavat lähdöt avautuvat yhdellä klikkauksella.',
+        },
         cv: {
           title: 'Tämä CV-sivusto',
           description:
@@ -307,6 +312,11 @@ const messages = {
           title: 'Forkcast',
           description:
             "A recipe and meal-planning app for the week ahead. Search recipes, plan meals for the week, and automatically generate a shopping list from the planned recipes' ingredients.",
+        },
+        kulkuri: {
+          title: 'Kulkuri',
+          description:
+            'A real-time public transit map for the Helsinki metropolitan area. Buses, trams, metros, trains and ferries glide across the map with smooth animation instead of static timetables, and a click reveals a stop\'s next departures.',
         },
         cv: {
           title: 'This CV site',

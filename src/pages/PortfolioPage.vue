@@ -88,6 +88,14 @@ const projects = [
     tags: ['Nuxt', 'Vue', 'TypeScript', 'Tailwind CSS', 'Supabase'],
   },
   {
+    key: 'kulkuri',
+    image: '/project-kulkuri.jpg',
+    displayUrl: 'kulkuri.kekola.fi',
+    liveHref: 'https://kulkuri.kekola.fi',
+    githubHref: 'https://github.com/mkekola/kulkuri',
+    tags: ['Vue 3', 'TypeScript', 'Vite', 'MapLibre GL JS', 'MQTT'],
+  },
+  {
     key: 'cv',
     image: '/project-cv.jpg',
     displayUrl: 'kekola.fi',
