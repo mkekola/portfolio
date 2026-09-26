@@ -196,6 +196,7 @@ const t: typeof i18n.t = i18n.t.bind(i18n);
 .project-content h2 {
   font-size: 26px;
   font-weight: 800;
+  line-height: 1.2;
   color: var(--text-heading);
   margin: 0 0 12px;
 }

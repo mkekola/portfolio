@@ -227,6 +227,7 @@ const nextItems = computed<string[]>(() =>
   font-size: clamp(30px, 4vw, 42px);
   font-weight: 800;
   letter-spacing: -0.01em;
+  line-height: 1.15;
   color: var(--text-heading);
   margin: 0 0 14px;
   text-wrap: balance;
@@ -314,6 +315,7 @@ const nextItems = computed<string[]>(() =>
   font-family: var(--font-heading);
   font-size: 20px;
   font-weight: 800;
+  line-height: 1.3;
   color: var(--text-heading);
   margin: 0 0 14px;
   text-wrap: balance;
@@ -336,6 +338,7 @@ const nextItems = computed<string[]>(() =>
   font-family: var(--font-heading);
   font-size: 20px;
   font-weight: 800;
+  line-height: 1.3;
   color: var(--text-heading);
   margin: 0 0 8px;
   text-wrap: balance;
@@ -369,6 +372,7 @@ const nextItems = computed<string[]>(() =>
   font-family: var(--font-heading);
   font-size: 16.5px;
   font-weight: 700;
+  line-height: 1.35;
   color: var(--text-heading);
   margin: 0 0 10px;
   text-wrap: balance;
