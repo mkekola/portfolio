@@ -1,5 +1,9 @@
 <template>
   <q-page v-if="project">
+    <div class="reading-progress" aria-hidden="true">
+      <div class="reading-progress-fill" :style="{ width: `${readingProgress}%` }"></div>
+    </div>
+
     <BackgroundBlobs />
 
     <div class="page-inner">
@@ -88,7 +92,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue';
+import { computed, onBeforeUnmount, onMounted, ref } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import { useI18n } from 'vue-i18n';
 import BackgroundBlobs from 'src/components/BackgroundBlobs.vue';
@@ -108,6 +112,24 @@ const project = computed(() => projects.find((p) => p.key === route.params.key &
 if (!project.value) {
   void router.replace('/portfolio');
 }
+
+const readingProgress = ref(0);
+
+function updateReadingProgress() {
+  const max = document.documentElement.scrollHeight - window.innerHeight;
+  readingProgress.value = max > 0 ? Math.min(100, Math.max(0, (window.scrollY / max) * 100)) : 0;
+}
+
+onMounted(() => {
+  updateReadingProgress();
+  window.addEventListener('scroll', updateReadingProgress, { passive: true });
+  window.addEventListener('resize', updateReadingProgress);
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener('scroll', updateReadingProgress);
+  window.removeEventListener('resize', updateReadingProgress);
+});
 
 function goBackToPortfolio() {
   if (window.history.state?.back) {
@@ -138,6 +160,33 @@ const nextItems = computed<string[]>(() =>
 .q-page {
   position: relative;
 }
+
+.reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  z-index: 2000;
+  pointer-events: none;
+}
+.reading-progress-fill {
+  height: 100%;
+  background: var(--progress-gradient);
+  border-radius: 0 3px 3px 0;
+  transition: width 90ms linear;
+}
+@media (prefers-reduced-motion: reduce) {
+  .reading-progress-fill {
+    transition: none;
+  }
+}
+@media print {
+  .reading-progress {
+    display: none;
+  }
+}
+
 .page-inner {
   position: relative;
   z-index: 1;
