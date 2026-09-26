@@ -365,7 +365,7 @@ const contacts = [
 }
 .hobbies-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 16px 10px;
   justify-items: center;
 }
@@ -598,9 +598,6 @@ const contacts = [
 }
 
 @media (max-width: 480px) {
-  .hobbies-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
   .hero {
     padding: 32px 16px 28px;
   }
