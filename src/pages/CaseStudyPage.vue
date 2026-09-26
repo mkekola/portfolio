@@ -14,10 +14,10 @@
         </div>
       </div>
 
-      <router-link to="/portfolio" class="back-link">
+      <a href="/portfolio" class="back-link" @click.prevent="goBackToPortfolio">
         <q-icon name="fa-solid fa-arrow-left" size="13px" />
         {{ $t('portfolio.backToPortfolio') }}
-      </router-link>
+      </a>
 
       <article class="case-page">
         <div class="case-eyebrow">{{ $t('portfolio.caseStudyEyebrow') }}</div>
@@ -107,6 +107,14 @@ const project = computed(() => projects.find((p) => p.key === route.params.key &
 
 if (!project.value) {
   void router.replace('/portfolio');
+}
+
+function goBackToPortfolio() {
+  if (window.history.state?.back) {
+    router.back();
+  } else {
+    void router.push('/portfolio');
+  }
 }
 
 interface Decision {
