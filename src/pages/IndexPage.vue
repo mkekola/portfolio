@@ -285,12 +285,14 @@ const contacts = [
   }
 }
 .hero-name {
-  font-size: 48px;
-  font-weight: 800;
-  letter-spacing: -0.02em;
+  font-family: var(--font-display);
+  font-size: 52px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
   line-height: 1.05;
   color: var(--text-heading);
   margin: 0 0 14px;
+  text-wrap: balance;
 }
 .hero-tagline {
   font-family: var(--font-heading);

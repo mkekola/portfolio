@@ -4,6 +4,13 @@
     <div class="blob blob-b"></div>
     <div class="blob blob-c"></div>
     <div class="blob blob-d"></div>
+    <svg width="0" height="0">
+      <filter id="bgGrainFilter">
+        <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch" />
+        <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.9 0" />
+      </filter>
+    </svg>
+    <div class="grain"></div>
   </div>
 </template>
 
@@ -65,6 +72,14 @@
   width: 460px;
   height: 460px;
   background: var(--blob-1);
+}
+
+.grain {
+  position: absolute;
+  inset: 0;
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+  filter: url(#bgGrainFilter);
 }
 
 @media print {
