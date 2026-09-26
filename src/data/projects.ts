@@ -16,6 +16,7 @@ export const projects: Project[] = [
     liveHref: 'https://forkcast.kekola.fi',
     githubHref: 'https://github.com/mkekola/Forkcast',
     tags: ['Nuxt', 'Vue', 'TypeScript', 'Tailwind CSS', 'Supabase'],
+    caseStudy: true,
   },
   {
     key: 'kulkuri',

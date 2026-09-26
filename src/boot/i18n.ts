@@ -149,6 +149,40 @@ const messages = {
       caseStudyCta: 'Lue case study',
       caseStudyEyebrow: 'Case study',
       caseStudies: {
+        forkcast: {
+          dek: 'Resepti- ja ateriasuunnittelusovellus, joka auttaa suunnittelemaan viikon ruoat etukäteen ja muuttaa suunnitelman suoraan ostoslistaksi.',
+          metaRole: 'Suunnittelu & toteutus, 2026',
+          metaStack: ['Nuxt · Vue · TypeScript', 'Tailwind CSS · Supabase'],
+          heroCaption: 'Etusivu, jossa viikon ruoat suunnitellaan ennen kuin nälkä ehtii päättää puolestasi.',
+          contextTitle: 'Lähtökohta',
+          contextBody:
+            'Tiedän sen tunteen. On nälkä, jääkaapissa ei ole mitään järkevää, ja tilaan taas jotain valmista. Halusin sovelluksen joka pakottaa suunnittelemaan viikon ruoat silloin kun on rauhallinen hetki ja pää selvä, ei silloin kun vatsa jo kurisee. Forkcast hakee reseptit, kokoaa ne viikkokalenteriin ja muuttaa suunnitelman suoraan ostoslistaksi.',
+          decisionsTitle: 'Kolme päätöstä matkan varrelta',
+          decisionsIntro: 'Tällaisia ongelmia ei huomaa valmiista sovelluksesta. Ne löytää vasta kun tekee sen itse.',
+          decisions: [
+            {
+              tag: 'Ongelma',
+              title: 'Otsikko ei kerro kaikkea',
+              body: "Jos hakee kanaa ja pastaa, moni hyvä resepti jäisi löytymättä pelkän nimen perusteella tehdyssä haussa, koska resepti saattaa olla nimeltään vaikka 'Perjantain lempparimme'. Nyt haku ja suodattimet käyvät läpi oikean aineslistan, joten resepti löytyy vaikka nimi ei vihjaisi mistään.",
+            },
+            {
+              tag: 'Ongelma',
+              title: 'Viisi reseptiä, yksi ostoslista',
+              body: 'Kun viikkoon valitsee useamman reseptin, samat raaka-aineet toistuvat monessa eri määrässä. Ostoslista olisi sekava, jos jokainen resepti vain listattaisiin erikseen. Nyt sovellus laskee ainekset yhteen kaikista valituista resepteistä ja jaottelee ne kategorioihin, kuten proteiinit ja maitotuotteet, niin että lista muistuttaa oikeaa kauppalistaa.',
+            },
+            {
+              tag: 'Ongelma',
+              title: 'Ei pakotettua kirjautumista',
+              body: 'Moni luopuu tällaisesta sovelluksesta heti, kun pitäisi luoda tili. Halusin että suosikit ja viikkosuunnitelma tallentuvat heti ilman salasanaa. Selain saa taustalla oman tunnisteen, jonka perusteella tiedot tallentuvat, joten käyttö tuntuu välittömältä.',
+            },
+          ],
+          nextTitle: 'Mitä tekisin seuraavaksi',
+          nextItems: [
+            'Reseptien annosmäärän skaalaus, jotta ainesosat laskisivat automaattisesti oikeaan henkilömäärään.',
+            'Oma tili, jolla suunnitelma ja suosikit siirtyisivät laitteesta toiseen.',
+            'Mahdollisuus lisätä omia reseptejä valmiiden joukkoon.',
+          ],
+        },
         kulkuri: {
           dek: 'Reaaliaikainen HSL-liikennekartta. Bussit, raitiovaunut, metrot, junat ja lautat liikkuvat kartalla juuri niin kuin ne oikeasti liikkuvat kaupungissa, ei aikataulunumeroina.',
           metaRole: 'Suunnittelu & toteutus, 2026',
@@ -350,6 +384,40 @@ const messages = {
       caseStudyCta: 'Read case study',
       caseStudyEyebrow: 'Case study',
       caseStudies: {
+        forkcast: {
+          dek: "A recipe and meal planning app that helps you plan the week's meals ahead of time and turns that plan straight into a shopping list.",
+          metaRole: 'Design & development, 2026',
+          metaStack: ['Nuxt · Vue · TypeScript', 'Tailwind CSS · Supabase'],
+          heroCaption: "The home view, where the week's meals get planned before hunger makes the decision for you.",
+          contextTitle: 'The idea',
+          contextBody:
+            "I know the feeling. You're hungry, there's nothing sensible in the fridge, and you order takeout again. I wanted an app that forces you to plan the week's meals while you're calm and thinking clearly, not once your stomach is already growling. Forkcast searches recipes, gathers them into a weekly calendar, and turns that plan straight into a shopping list.",
+          decisionsTitle: 'Three decisions along the way',
+          decisionsIntro: 'These are the kinds of problems you only notice once you build the thing yourself.',
+          decisions: [
+            {
+              tag: 'Problem',
+              title: 'A title does not tell you everything',
+              body: "Searching for chicken and pasta would miss plenty of good recipes if the search only matched titles, since a recipe might just be called something like 'Friday favorite'. Now search and filters look at the actual ingredient list, so a recipe turns up even when its name gives nothing away.",
+            },
+            {
+              tag: 'Problem',
+              title: 'Five recipes, one shopping list',
+              body: 'Once you pick several recipes for the week, the same ingredients show up again and again in different amounts. Listing each recipe separately would make for a messy shopping list. Now the app adds up ingredients across every recipe you picked and sorts them into categories like proteins and dairy, so the list reads like an actual grocery list.',
+            },
+            {
+              tag: 'Problem',
+              title: 'No forced login',
+              body: 'Plenty of people give up on an app the moment it asks them to create an account. I wanted favorites and the weekly plan to save right away, without a password. The browser gets its own identity behind the scenes, and everything saves against that, so using the app feels instant.',
+            },
+          ],
+          nextTitle: "What I'd build next",
+          nextItems: [
+            "Scale ingredient amounts to match how many people you're cooking for.",
+            'An account so the plan and favorites carry over between devices.',
+            'A way to add your own recipes alongside the ready-made ones.',
+          ],
+        },
         kulkuri: {
           dek: 'A real-time transit map for HSL. Buses, trams, metros, trains and ferries move across the map the way they actually move through the city, not as timetable numbers.',
           metaRole: 'Design & development, 2026',
