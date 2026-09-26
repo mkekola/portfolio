@@ -56,6 +56,10 @@
                 <q-icon name="fa-brands fa-github" size="16px" />
                 GitHub
               </a>
+              <router-link v-if="p.caseStudy" :to="`/portfolio/${p.key}`" class="case-study-link">
+                {{ $t('portfolio.caseStudyCta') }}
+                <q-icon name="fa-solid fa-arrow-right" size="12px" />
+              </router-link>
             </div>
           </div>
         </article>
@@ -74,36 +78,10 @@ import BackgroundBlobs from 'src/components/BackgroundBlobs.vue';
 import LanguageSwitch from 'src/components/LanguageSwitch.vue';
 import ThemeSwitch from 'src/components/ThemeSwitch.vue';
 import ScrollToTop from 'src/components/ScrollToTop.vue';
+import { projects } from 'src/data/projects';
 
 const i18n = useI18n();
 const t: typeof i18n.t = i18n.t.bind(i18n);
-
-const projects = [
-  {
-    key: 'forkcast',
-    image: '/project-forkcast.jpg',
-    displayUrl: 'forkcast.kekola.fi',
-    liveHref: 'https://forkcast.kekola.fi',
-    githubHref: 'https://github.com/mkekola/Forkcast',
-    tags: ['Nuxt', 'Vue', 'TypeScript', 'Tailwind CSS', 'Supabase'],
-  },
-  {
-    key: 'kulkuri',
-    image: '/project-kulkuri.jpg',
-    displayUrl: 'kulkuri.kekola.fi',
-    liveHref: 'https://kulkuri.kekola.fi',
-    githubHref: 'https://github.com/mkekola/kulkuri',
-    tags: ['Vue 3', 'TypeScript', 'Vite', 'MapLibre GL JS', 'MQTT'],
-  },
-  {
-    key: 'cv',
-    image: '/project-cv.jpg',
-    displayUrl: 'kekola.fi',
-    liveHref: 'https://kekola.fi',
-    githubHref: 'https://github.com/mkekola/portfolio',
-    tags: ['Vue', 'Quasar', 'TypeScript', 'SCSS'],
-  },
-];
 </script>
 
 <style scoped>
@@ -234,6 +212,19 @@ const projects = [
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
+  align-items: center;
+}
+.case-study-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--accent-solid);
+  text-decoration: none;
+}
+.case-study-link:hover {
+  text-decoration: underline;
 }
 
 .browser-frame {

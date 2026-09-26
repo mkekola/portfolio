@@ -141,10 +141,49 @@ const messages = {
     },
     portfolio: {
       back: 'Takaisin etusivulle',
+      backToPortfolio: 'Takaisin portfolioon',
       title: 'Portfolio',
       subtitle:
         'Muutama projekti, joissa pääsen kehittämään frontend- ja UI-osaamistani. Samalla opettelen hyödyntämään tekoälytyökaluja, kuten Claude Codea, osana omaa työskentelyäni.',
       viewLive: 'Kokeile',
+      caseStudyCta: 'Lue case study',
+      caseStudyEyebrow: 'Case study',
+      caseStudies: {
+        kulkuri: {
+          dek: 'Reaaliaikainen HSL-liikennekartta. Bussit, raitiovaunut, metrot, junat ja lautat liikkuvat kartalla juuri niin kuin ne oikeasti liikkuvat kaupungissa, ei aikataulunumeroina.',
+          metaRole: 'Suunnittelu & toteutus, 2026',
+          metaStack: ['Vue 3 · TypeScript · Vite', 'MapLibre GL JS · HSL:n reaaliaikadata'],
+          heroCaption: 'Live-tilanne Helsingin keskustassa. Jokainen piste on oikea, juuri nyt liikkeellä oleva ajoneuvo.',
+          contextTitle: 'Lähtökohta',
+          contextBody:
+            'Valmiit joukkoliikennesovellukset näyttävät aikatauluja. Bussi 550 lähtee 14:32, ja siihen se jää. Ne eivät kerro, tuntuuko kaupunki juuri nyt vilkkaalta vai hiljaiselta, tai onko se bussi oikeasti matkalla vai jumissa Mannerheimintiellä. Minä halusin nähdä liikenteen sellaisena kuin se oikeasti on: elävänä ja liikkuvana, en pelkkinä numeroina listassa.',
+          decisionsTitle: 'Kolme päätöstä matkan varrelta',
+          decisionsIntro: 'Tällaisia ongelmia ei huomaa valmiista sovelluksesta. Ne löytää vasta kun tekee sen itse.',
+          decisions: [
+            {
+              tag: 'Ongelma',
+              title: 'Pomppivat pisteet',
+              body: 'Ajoneuvon sijainti ei päivity kartalle joka sekunti, vaan pieninä pyrähdyksinä muutaman sekunnin välein. Suoraan piirrettynä bussit olisivat hypähdelleet pisteestä toiseen kuin teleporttaisivat. Nyt selain muistaa jokaisen ajoneuvon kaksi viime sijaintia ja liikuttaa sitä pehmeästi niiden välillä, jolloin liike näyttää oikealta ajamiselta.',
+            },
+            {
+              tag: 'Ongelma',
+              title: 'Kaksoisyksiköt',
+              body: 'Junat ja metrot kulkevat usein pareittain, mutta jokainen vaunu raportoi sijaintinsa erikseen. Kartalla se näkyi kahtena täysin päällekkäisenä pisteenä, ja näytti siltä että jokin oli rikki. Nyt samalla reitillä ja lähes samassa kohdassa kulkevat parit yhdistyvät yhdeksi merkiksi.',
+            },
+            {
+              tag: 'Ongelma',
+              title: 'Täysi kartta',
+              body: 'Ruudulla voi olla samaan aikaan kymmeniä liikkuvia ajoneuvoja ja koko reittilista. Vaalealla kartalla väripisteet olisivat hukkuneet taustaan. Tumma pohja nostaa bussit, raitiovaunut ja junat esiin heti, ja koko näkymä alkaa muistuttaa oikeaa liikenteenvalvomon näyttöä.',
+            },
+          ],
+          nextTitle: 'Mitä tekisin seuraavaksi',
+          nextItems: [
+            'Ryhmittelisin lähekkäiset pisteet yhteen kaukaa zoomatussa näkymässä, ettei kartta näytä sotkulta.',
+            'Yhdistäisin häiriötiedotteet karttaan, jotta pysähdys näkyy heti syynä eikä vain hiljaisena pisteenä.',
+            'Synkronoisin suosikit laitteiden välillä.',
+          ],
+        },
+      },
       projects: {
         forkcast: {
           title: 'Forkcast',
@@ -303,10 +342,49 @@ const messages = {
     },
     portfolio: {
       back: 'Back to home',
+      backToPortfolio: 'Back to portfolio',
       title: 'Portfolio',
       subtitle:
         "A few projects where I get to grow my frontend and UI skills. Along the way, I'm also learning to make the most of AI tools like Claude Code as part of how I work.",
       viewLive: 'View live',
+      caseStudyCta: 'Read case study',
+      caseStudyEyebrow: 'Case study',
+      caseStudies: {
+        kulkuri: {
+          dek: 'A real-time transit map for HSL. Buses, trams, metros, trains and ferries move across the map the way they actually move through the city, not as timetable numbers.',
+          metaRole: 'Design & development, 2026',
+          metaStack: ['Vue 3 · TypeScript · Vite', 'MapLibre GL JS · HSL live data'],
+          heroCaption: 'Live traffic in downtown Helsinki. Every dot is a real vehicle, moving right now.',
+          contextTitle: 'The idea',
+          contextBody:
+            'Most transit apps show timetables. Bus 550 leaves at 14:32, and that is all you get. They do not tell you whether the city feels busy or quiet right now, or whether that bus is actually on its way or stuck on Mannerheimintie. I wanted to see traffic the way it really is: alive and moving, not just numbers in a list.',
+          decisionsTitle: 'Three decisions along the way',
+          decisionsIntro: 'These are the kinds of problems you only notice once you build the thing yourself.',
+          decisions: [
+            {
+              tag: 'Problem',
+              title: 'Jumpy dots',
+              body: "A vehicle's position does not update on the map every second, it arrives in small bursts every few seconds. Drawn directly, buses would hop from point to point like they were teleporting. Now the browser remembers each vehicle's last two positions and eases it between them, so the movement looks like actual driving.",
+            },
+            {
+              tag: 'Problem',
+              title: 'Paired vehicles',
+              body: 'Trains and metros often run in pairs, but each car reports its own position. On the map that showed up as two dots sitting exactly on top of each other, which looked broken. Now pairs running the same route in nearly the same spot merge into a single marker.',
+            },
+            {
+              tag: 'Problem',
+              title: 'A busy map',
+              body: 'The screen can hold dozens of moving vehicles and a full route list at once. On a light map, the colored dots would get lost in the background. A dark base makes buses, trams and trains stand out right away, and the whole view starts to feel like a real control room screen.',
+            },
+          ],
+          nextTitle: "What I'd build next",
+          nextItems: [
+            'Group nearby dots together at low zoom levels, so the map does not turn into a mess.',
+            'Bring service alerts onto the map, so a stopped vehicle shows its reason instead of just sitting still.',
+            'Sync favorites across devices.',
+          ],
+        },
+      },
       projects: {
         forkcast: {
           title: 'Forkcast',
