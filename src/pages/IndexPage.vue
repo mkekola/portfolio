@@ -165,7 +165,7 @@
 </template>
 
 <script setup lang="ts">
-import { reactive } from 'vue';
+import { onBeforeUnmount, onMounted, reactive } from 'vue';
 import SectionNav from 'src/components/SectionNav.vue';
 import PaperSection from 'src/components/PaperSection.vue';
 import ScrollToTop from 'src/components/ScrollToTop.vue';
@@ -211,6 +211,38 @@ const skills = [
   { icon: 'fa-solid fa-language', key: 'lang' },
   { icon: 'fa-solid fa-user-friends', key: 'soft' },
 ];
+// Aikajanat piirtyvät vasta kun ne tulevat näkyviin. Piilotettu lähtötila lisätään
+// vasta täällä, jotta sisältö näkyy normaalisti jos JS ei jostain syystä aja tätä.
+let timelineObserver: IntersectionObserver | null = null;
+
+onMounted(() => {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const timelines = Array.from(document.querySelectorAll<HTMLElement>('.glass-timeline'));
+  if (!timelines.length) return;
+
+  timelineObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-drawn');
+        timelineObserver?.unobserve(entry.target);
+      });
+    },
+    { threshold: 0.15 },
+  );
+
+  timelines.forEach((el) => {
+    el.classList.add('is-armed');
+    timelineObserver?.observe(el);
+  });
+});
+
+onBeforeUnmount(() => {
+  timelineObserver?.disconnect();
+  timelineObserver = null;
+});
+
 const contacts = [
   { icon: 'fa-solid fa-envelope', label: 'Gmail', href: 'mailto:maria.kekola@gmail.com' },
   {
@@ -542,8 +574,71 @@ const contacts = [
   font-size: 16px;
   margin: 0;
 }
+.glass-timeline.is-armed .timeline-dot {
+  transform: scale(0);
+  transition: transform 420ms cubic-bezier(0.34, 1.5, 0.64, 1);
+}
+.glass-timeline.is-armed .timeline-line {
+  transform: scaleY(0);
+  transform-origin: top center;
+  transition: transform 520ms ease-out;
+}
+.glass-timeline.is-armed .timeline-period,
+.glass-timeline.is-armed .timeline-body {
+  opacity: 0;
+  transform: translateY(8px);
+  transition:
+    opacity 460ms ease-out,
+    transform 460ms ease-out;
+}
+.glass-timeline.is-armed.is-drawn .timeline-dot {
+  transform: scale(1);
+}
+.glass-timeline.is-armed.is-drawn .timeline-line {
+  transform: scaleY(1);
+}
+.glass-timeline.is-armed.is-drawn .timeline-period,
+.glass-timeline.is-armed.is-drawn .timeline-body {
+  opacity: 1;
+  transform: translateY(0);
+}
+.glass-timeline.is-armed .timeline-item:nth-child(1) .timeline-line {
+  transition-delay: 120ms;
+}
+.glass-timeline.is-armed .timeline-item:nth-child(1) .timeline-period,
+.glass-timeline.is-armed .timeline-item:nth-child(1) .timeline-body {
+  transition-delay: 60ms;
+}
+.glass-timeline.is-armed .timeline-item:nth-child(2) .timeline-dot {
+  transition-delay: 240ms;
+}
+.glass-timeline.is-armed .timeline-item:nth-child(2) .timeline-line {
+  transition-delay: 360ms;
+}
+.glass-timeline.is-armed .timeline-item:nth-child(2) .timeline-period,
+.glass-timeline.is-armed .timeline-item:nth-child(2) .timeline-body {
+  transition-delay: 300ms;
+}
+.glass-timeline.is-armed .timeline-item:nth-child(3) .timeline-dot {
+  transition-delay: 480ms;
+}
+.glass-timeline.is-armed .timeline-item:nth-child(3) .timeline-line {
+  transition-delay: 600ms;
+}
+.glass-timeline.is-armed .timeline-item:nth-child(3) .timeline-period,
+.glass-timeline.is-armed .timeline-item:nth-child(3) .timeline-body {
+  transition-delay: 540ms;
+}
+
 .timeline-item--active .timeline-dot {
   animation: timeline-pulse 1.8s ease-out infinite;
+}
+/* Syke odottaa oman vuoronsa, ettei se kilpaile pisteen ilmestymisen kanssa. */
+.glass-timeline.is-armed:not(.is-drawn) .timeline-item--active .timeline-dot {
+  animation: none;
+}
+.glass-timeline.is-armed.is-drawn .timeline-item--active .timeline-dot {
+  animation-delay: 420ms;
 }
 @keyframes timeline-pulse {
   0% {
