@@ -15,10 +15,10 @@
           <div class="hero-tagline">{{ $t('hero.tagline') }}</div>
           <p class="hero-subtitle">{{ $t('hero.subtitle') }}</p>
           <div class="hero-cta">
-            <button class="btn btn-primary" @click="downloadCv">
+            <a class="btn btn-primary" :href="cvFile.href" :download="cvFile.name">
               <q-icon name="fa-solid fa-download" size="16px" />
               {{ $t('hero.downloadCv') }}
-            </button>
+            </a>
             <router-link to="/portfolio" class="btn btn-secondary">
               <q-icon name="fa-solid fa-diagram-project" size="16px" />
               {{ $t('hero.portfolioCta') }}
@@ -165,7 +165,7 @@
 </template>
 
 <script setup lang="ts">
-import { onBeforeUnmount, onMounted, reactive } from 'vue';
+import { computed, onBeforeUnmount, onMounted, reactive } from 'vue';
 import SectionNav from 'src/components/SectionNav.vue';
 import PaperSection from 'src/components/PaperSection.vue';
 import ScrollToTop from 'src/components/ScrollToTop.vue';
@@ -182,9 +182,11 @@ function breakLabel(s: string) {
 function to(sel: string) {
   document.querySelector(sel)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
-function downloadCv() {
-  window.print();
-}
+const cvFiles = {
+  fi: { href: '/maria-kekola-cv-fi.pdf', name: 'Maria-Kekola-CV-2026-FI.pdf' },
+  en: { href: '/maria-kekola-cv-en.pdf', name: 'Maria-Kekola-CV-2026-EN.pdf' },
+};
+const cvFile = computed(() => (i18n.locale.value === 'fi' ? cvFiles.fi : cvFiles.en));
 const hobbies = [
   { icon: 'fa-solid fa-camera', key: 'photo' },
   { icon: 'fa-solid fa-gamepad', key: 'games' },
