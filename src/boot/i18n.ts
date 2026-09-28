@@ -149,14 +149,14 @@ const messages = {
       caseStudyCta: 'Lue case study',
       caseStudyEyebrow: 'Case study',
       caseStudies: {
-        forkcast: {
+        preppis: {
           dek: 'Resepti- ja ateriasuunnittelusovellus, joka auttaa suunnittelemaan viikon ruoat etukäteen ja muuttaa suunnitelman suoraan ostoslistaksi.',
           metaRole: 'Suunnittelu & toteutus, 2026',
           metaStack: ['Nuxt · Vue · TypeScript', 'Tailwind CSS · Supabase'],
           heroCaption: 'Etusivu, jossa viikon ruoat suunnitellaan ennen kuin nälkä ehtii päättää puolestasi.',
           contextTitle: 'Lähtökohta',
           contextBody:
-            'Tiedän sen tunteen. On nälkä, jääkaapissa ei ole mitään järkevää, ja tilaan taas jotain valmista. Halusin sovelluksen joka pakottaa suunnittelemaan viikon ruoat silloin kun on rauhallinen hetki ja pää selvä, ei silloin kun vatsa jo kurisee. Forkcast hakee reseptit, kokoaa ne viikkokalenteriin ja muuttaa suunnitelman suoraan ostoslistaksi.',
+            'Tiedän sen tunteen. On nälkä, jääkaapissa ei ole mitään järkevää, ja tilaan taas jotain valmista. Halusin sovelluksen joka pakottaa suunnittelemaan viikon ruoat silloin kun on rauhallinen hetki ja pää selvä, ei silloin kun vatsa jo kurisee. Preppis hakee reseptit, kokoaa ne viikkokalenteriin ja muuttaa suunnitelman suoraan ostoslistaksi.',
           decisionsTitle: 'Kolme päätöstä matkan varrelta',
           decisionsIntro: 'Tällaisia ongelmia ei huomaa valmiista sovelluksesta. Ne löytää vasta kun tekee sen itse.',
           decisions: [
@@ -219,8 +219,8 @@ const messages = {
         },
       },
       projects: {
-        forkcast: {
-          title: 'Forkcast',
+        preppis: {
+          title: 'Preppis',
           description:
             'Viikkosuunnitteluun tarkoitettu resepti- ja ateriasuunnittelusovellus. Hae reseptejä, suunnittele viikon ateriat ja muodosta ostoslista automaattisesti suunniteltujen reseptien aineksista.',
         },
@@ -384,14 +384,14 @@ const messages = {
       caseStudyCta: 'Read case study',
       caseStudyEyebrow: 'Case study',
       caseStudies: {
-        forkcast: {
+        preppis: {
           dek: "A recipe and meal planning app that helps you plan the week's meals ahead of time and turns that plan straight into a shopping list.",
           metaRole: 'Design & development, 2026',
           metaStack: ['Nuxt · Vue · TypeScript', 'Tailwind CSS · Supabase'],
           heroCaption: "The home view, where the week's meals get planned before hunger makes the decision for you.",
           contextTitle: 'The idea',
           contextBody:
-            "I know the feeling. You're hungry, there's nothing sensible in the fridge, and you order takeout again. I wanted an app that forces you to plan the week's meals while you're calm and thinking clearly, not once your stomach is already growling. Forkcast searches recipes, gathers them into a weekly calendar, and turns that plan straight into a shopping list.",
+            "I know the feeling. You're hungry, there's nothing sensible in the fridge, and you order takeout again. I wanted an app that forces you to plan the week's meals while you're calm and thinking clearly, not once your stomach is already growling. Preppis searches recipes, gathers them into a weekly calendar, and turns that plan straight into a shopping list.",
           decisionsTitle: 'Three decisions along the way',
           decisionsIntro: 'These are the kinds of problems you only notice once you build the thing yourself.',
           decisions: [
@@ -454,8 +454,8 @@ const messages = {
         },
       },
       projects: {
-        forkcast: {
-          title: 'Forkcast',
+        preppis: {
+          title: 'Preppis',
           description:
             "A recipe and meal-planning app for the week ahead. Search recipes, plan meals for the week, and automatically generate a shopping list from the planned recipes' ingredients.",
         },

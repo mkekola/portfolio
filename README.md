@@ -7,7 +7,7 @@ Live: [kekola.fi](https://kekola.fi)
 ## Features
 
 - CV page with about, experience, education and contact sections
-- Portfolio page showcasing projects, including [Forkcast](https://github.com/mkekola/Forkcast)
+- Portfolio page showcasing projects, including [Preppis](https://github.com/mkekola/Preppis) and [Kulkuri](https://github.com/mkekola/kulkuri), each with its own case study page
 - Finnish and English, switchable via Vue I18n
 - Light and dark theme
 - Subsetted FontAwesome icons for a small bundle size

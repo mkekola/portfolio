@@ -10,11 +10,11 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    key: 'forkcast',
-    image: '/project-forkcast.jpg',
-    displayUrl: 'forkcast.kekola.fi',
-    liveHref: 'https://forkcast.kekola.fi',
-    githubHref: 'https://github.com/mkekola/Forkcast',
+    key: 'preppis',
+    image: '/project-preppis.jpg',
+    displayUrl: 'preppis.kekola.fi',
+    liveHref: 'https://preppis.kekola.fi',
+    githubHref: 'https://github.com/mkekola/Preppis',
     tags: ['Nuxt', 'Vue', 'TypeScript', 'Tailwind CSS', 'Supabase'],
     caseStudy: true,
   },
