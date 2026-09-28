@@ -2,6 +2,8 @@
 
 **Suomeksi** · [English](README.en.md)
 
+[![CI](https://github.com/mkekola/portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/mkekola/portfolio/actions/workflows/ci.yml)
+
 **Kekola.fi: CV ja portfolio.**
 
 Kekola.fi on henkilökohtainen CV- ja portfoliosivusto. Sivusto esittelee työkokemuksen, koulutuksen ja taidot, ja portfolio-osiossa jokaisesta projektista on oma case study -sivunsa, jossa kerrotaan mitä ongelmia matkan varrella tuli vastaan ja miten ne ratkaistiin. Koko sivusto on kaksikielinen ja toimii sekä vaalealla että tummalla teemalla. Visuaalinen ilme perustuu lasimaisiin pintoihin ja aurora-gradienttiin, ja kaikki värit on määritelty design-tokeneina yhdessä paikassa.
@@ -37,7 +39,8 @@ Kekola.fi on henkilökohtainen CV- ja portfoliosivusto. Sivusto esittelee työko
 - SCSS ja CSS-muuttujat, värit `oklch()`-väriavaruudessa
 - [Plus Jakarta Sans](https://fonts.google.com/specimen/Plus+Jakarta+Sans) ja [Fraunces](https://fonts.google.com/specimen/Fraunces) Google Fontsista, ladattuna renderöintiä estämättä
 - [Font Awesome](https://fontawesome.com/) subsetattuna, eli mukaan paketoidaan vain käytetyt ikonit
-- Netlify hostaukseen
+- [Vitest](https://vitest.dev/) testeille
+- Netlify hostaukseen, GitHub Actions CI:hin
 
 ## Arkkitehtuuri
 
@@ -93,9 +96,12 @@ Sovellus on nyt käytettävissä osoitteessa `http://localhost:9000`.
 ### Testaus ja koodin laatu
 
 ```bash
+npm run test      # Vitest
 npm run lint      # ESLint
 npm run format    # Prettier
 ```
+
+Testit ovat `src/**/*.test.ts` ja ne kattavat logiikan, ei ulkoasua: lukupalkin laskennan, case studyn hakemisen reitin parametrilla, CV-tiedoston valinnan kielen mukaan sekä sen että suomen- ja englanninkieliset tekstit sisältävät täsmälleen samat avaimet.
 
 ### Tuotantoversion kääntäminen
 

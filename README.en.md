@@ -2,6 +2,8 @@
 
 [Suomeksi](README.md) · **English**
 
+[![CI](https://github.com/mkekola/portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/mkekola/portfolio/actions/workflows/ci.yml)
+
 **Kekola.fi: a CV and portfolio.**
 
 Kekola.fi is a personal CV and portfolio site. It covers work experience, education and skills, and every project in the portfolio has its own case study page describing the problems that came up along the way and how they were solved. The whole site is bilingual and works in both a light and a dark theme. The visual language is built on glass surfaces and an aurora gradient, and every colour is defined as a design token in one place.
@@ -37,7 +39,8 @@ Kekola.fi is a personal CV and portfolio site. It covers work experience, educat
 - SCSS and CSS custom properties, colours in the `oklch()` colour space
 - [Plus Jakarta Sans](https://fonts.google.com/specimen/Plus+Jakarta+Sans) and [Fraunces](https://fonts.google.com/specimen/Fraunces) from Google Fonts, loaded without blocking rendering
 - [Font Awesome](https://fontawesome.com/) subsetted, so only the icons actually used are bundled
-- Netlify for hosting
+- [Vitest](https://vitest.dev/) for tests
+- Netlify for hosting, GitHub Actions for CI
 
 ## Architecture
 
@@ -90,12 +93,15 @@ npm run dev
 
 The app is then available at `http://localhost:9000`.
 
-### Linting and formatting
+### Tests, linting and formatting
 
 ```bash
+npm run test      # Vitest
 npm run lint      # ESLint
 npm run format    # Prettier
 ```
+
+Tests live in `src/**/*.test.ts` and cover logic rather than layout: the reading progress calculation, resolving a case study from the route parameter, picking the CV file for the current language, and checking that the Finnish and English copy contain exactly the same keys.
 
 ### Build for production
 
