@@ -2,7 +2,7 @@
 
 **Suomeksi** · [English](README.en.md)
 
-**Kekola.fi: CV ja portfolio, suunniteltu ja koodattu itse.**
+**Kekola.fi: CV ja portfolio.**
 
 Kekola.fi on henkilökohtainen CV- ja portfoliosivusto. Sivusto esittelee työkokemuksen, koulutuksen ja taidot, ja portfolio-osiossa jokaisesta projektista on oma case study -sivunsa, jossa kerrotaan mitä ongelmia matkan varrella tuli vastaan ja miten ne ratkaistiin. Koko sivusto on kaksikielinen ja toimii sekä vaalealla että tummalla teemalla. Visuaalinen ilme perustuu lasimaisiin pintoihin ja aurora-gradienttiin, ja kaikki värit on määritelty design-tokeneina yhdessä paikassa.
 

@@ -2,7 +2,7 @@
 
 [Suomeksi](README.md) · **English**
 
-**Kekola.fi: a CV and portfolio, designed and coded from scratch.**
+**Kekola.fi: a CV and portfolio.**
 
 Kekola.fi is a personal CV and portfolio site. It covers work experience, education and skills, and every project in the portfolio has its own case study page describing the problems that came up along the way and how they were solved. The whole site is bilingual and works in both a light and a dark theme. The visual language is built on glass surfaces and an aurora gradient, and every colour is defined as a design token in one place.
 
