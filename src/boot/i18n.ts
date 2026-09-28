@@ -1,7 +1,7 @@
 import { boot } from 'quasar/wrappers';
 import { createI18n } from 'vue-i18n';
 
-const messages = {
+export const messages = {
   fi: {
     scrollTop: 'Takaisin ylös',
     nav: {

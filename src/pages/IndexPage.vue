@@ -170,6 +170,7 @@ import SectionNav from 'src/components/SectionNav.vue';
 import PaperSection from 'src/components/PaperSection.vue';
 import ScrollToTop from 'src/components/ScrollToTop.vue';
 import BackgroundBlobs from 'src/components/BackgroundBlobs.vue';
+import { cvFileFor } from 'src/data/cv';
 import { useI18n } from 'vue-i18n';
 const i18n = useI18n();
 const t: typeof i18n.t = i18n.t.bind(i18n);
@@ -182,11 +183,7 @@ function breakLabel(s: string) {
 function to(sel: string) {
   document.querySelector(sel)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
-const cvFiles = {
-  fi: { href: '/maria-kekola-cv-fi.pdf', name: 'Maria-Kekola-CV-2026-FI.pdf' },
-  en: { href: '/maria-kekola-cv-en.pdf', name: 'Maria-Kekola-CV-2026-EN.pdf' },
-};
-const cvFile = computed(() => (i18n.locale.value === 'fi' ? cvFiles.fi : cvFiles.en));
+const cvFile = computed(() => cvFileFor(i18n.locale.value));
 const hobbies = [
   { icon: 'fa-solid fa-camera', key: 'photo' },
   { icon: 'fa-solid fa-gamepad', key: 'games' },

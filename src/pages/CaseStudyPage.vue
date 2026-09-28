@@ -99,7 +99,8 @@ import BackgroundBlobs from 'src/components/BackgroundBlobs.vue';
 import LanguageSwitch from 'src/components/LanguageSwitch.vue';
 import ThemeSwitch from 'src/components/ThemeSwitch.vue';
 import ScrollToTop from 'src/components/ScrollToTop.vue';
-import { projects } from 'src/data/projects';
+import { findCaseStudy } from 'src/data/projects';
+import { scrollProgress } from 'src/utils/reading-progress';
 
 const route = useRoute();
 const router = useRouter();
@@ -107,7 +108,7 @@ const i18n = useI18n();
 const t: typeof i18n.t = i18n.t.bind(i18n);
 const tm: typeof i18n.tm = i18n.tm.bind(i18n);
 
-const project = computed(() => projects.find((p) => p.key === route.params.key && p.caseStudy));
+const project = computed(() => findCaseStudy(route.params.key));
 
 if (!project.value) {
   void router.replace('/portfolio');
@@ -116,8 +117,11 @@ if (!project.value) {
 const readingProgress = ref(0);
 
 function updateReadingProgress() {
-  const max = document.documentElement.scrollHeight - window.innerHeight;
-  readingProgress.value = max > 0 ? Math.min(100, Math.max(0, (window.scrollY / max) * 100)) : 0;
+  readingProgress.value = scrollProgress(
+    window.scrollY,
+    document.documentElement.scrollHeight,
+    window.innerHeight,
+  );
 }
 
 onMounted(() => {

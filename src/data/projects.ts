@@ -8,6 +8,15 @@ export interface Project {
   caseStudy?: boolean;
 }
 
+/**
+ * Case study pages are served from one generic route, so an unknown key or a
+ * project without a case study must resolve to nothing and send the visitor back.
+ */
+export function findCaseStudy(key: unknown): Project | undefined {
+  if (typeof key !== 'string') return undefined;
+  return projects.find((p) => p.key === key && p.caseStudy);
+}
+
 export const projects: Project[] = [
   {
     key: 'preppis',
